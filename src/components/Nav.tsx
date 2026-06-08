@@ -2,14 +2,18 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import logoAsset from "@/assets/logo.jpg.asset.json";
 
+type MenuItem =
+  | { label: string; to: "/laser" | "/facial" | "/botox" | "/prp" | "/rejuvenation" }
+  | { label: string; href: "/hair" };
+
 const LINES = [
-  "لیزر (کندلا شاتی)",
-  "فیشال و درمال",
-  "بوتاکس",
-  "PRP — سلول‌های فعال",
-  "مو و مزوتراپی",
-  "جوانسازی",
-];
+  { label: "لیزر (کندلا شاتی)", to: "/laser" },
+  { label: "فیشال و درمال", to: "/facial" },
+  { label: "بوتاکس", to: "/botox" },
+  { label: "PRP — سلول‌های فعال", to: "/prp" },
+  { label: "مو و مزوتراپی", href: "/hair" },
+  { label: "جوانسازی", to: "/rejuvenation" },
+] satisfies readonly MenuItem[];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,9 +55,9 @@ export function Nav() {
           </Link>
 
           <nav className="hidden items-center gap-10 md:flex" style={{ color: scrolled ? "var(--ink)" : "#FBF8F2" }}>
-            <NavLink>خانه</NavLink>
-            <NavLink>خدمات VIP</NavLink>
-            <NavLink>متخصصین لمون</NavLink>
+             <NavLink to="/">خانه</NavLink>
+             <NavLink to="/services">خدمات VIP</NavLink>
+             <NavLink to="/team">متخصصین لمون</NavLink>
             <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
               <button className="group relative inline-flex items-center gap-1 text-[15px]">
                 لاین‌های اختصاصی
@@ -66,10 +70,17 @@ export function Nav() {
               >
                 <div className="w-72 card-soft p-2">
                   {LINES.map((l, i) => (
-                    <a key={l} href="#" className="flex items-center justify-between rounded-md px-4 py-3 text-[14px] text-[var(--ink)] hover:bg-[var(--canvas)]" style={{ borderBottom: i < LINES.length - 1 ? "1px solid var(--line)" : "none" }}>
-                      <span>{l}</span>
-                      <span className="text-[var(--gold)]">←</span>
-                    </a>
+                    "to" in l ? (
+                      <Link key={l.label} to={l.to} className="flex items-center justify-between rounded-md px-4 py-3 text-[14px] text-[var(--ink)] hover:bg-[var(--canvas)]" style={{ borderBottom: i < LINES.length - 1 ? "1px solid var(--line)" : "none" }}>
+                        <span>{l.label}</span>
+                        <span className="text-[var(--gold)]">←</span>
+                      </Link>
+                    ) : (
+                      <a key={l.label} href={l.href} className="flex items-center justify-between rounded-md px-4 py-3 text-[14px] text-[var(--ink)] hover:bg-[var(--canvas)]" style={{ borderBottom: i < LINES.length - 1 ? "1px solid var(--line)" : "none" }}>
+                        <span>{l.label}</span>
+                        <span className="text-[var(--gold)]">←</span>
+                      </a>
+                    )
                   ))}
                 </div>
               </div>
@@ -90,9 +101,9 @@ export function Nav() {
             <span className="font-latin tracking-[0.32em] text-gold-gradient">LEMON</span>
           </div>
           <ul className="space-y-5 text-[17px]">
-            <li>خانه</li><li>خدمات VIP</li><li>متخصصین لمون</li>
+             <li><Link to="/">خانه</Link></li><li><Link to="/services">خدمات VIP</Link></li><li><Link to="/team">متخصصین لمون</Link></li>
             <li className="pt-4 text-[var(--ink-soft)] text-[12px] tracking-widest">لاین‌های اختصاصی</li>
-            {LINES.map((l) => <li key={l} className="text-[15px]">{l}</li>)}
+             {LINES.map((l) => <li key={l.label} className="text-[15px]">{"to" in l ? <Link to={l.to}>{l.label}</Link> : <a href={l.href}>{l.label}</a>}</li>)}
           </ul>
         </aside>
       </div>
@@ -100,11 +111,11 @@ export function Nav() {
   );
 }
 
-function NavLink({ children }: { children: ReactNode }) {
+function NavLink({ children, to }: { children: ReactNode; to: "/" | "/services" | "/team" }) {
   return (
-    <a href="#" className="group relative text-[15px]">
+    <Link to={to} className="group relative text-[15px]">
       {children}
       <span className="absolute -bottom-1 right-0 h-px w-0 bg-gold-gradient transition-all duration-500 group-hover:w-full" />
-    </a>
+    </Link>
   );
 }

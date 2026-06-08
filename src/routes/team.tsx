@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { LemonOrnament } from "@/components/GoldIcon";
@@ -58,7 +59,7 @@ function Portrait({ src, alt, objectPosition }: { src: string; alt: string; obje
   );
 }
 
-function Credential({ children, delay }: { children: React.ReactNode; delay: number }) {
+function Credential({ children, delay }: { children: ReactNode; delay: number }) {
   const ref = useReveal<HTMLLIElement>(delay);
   return (
     <li ref={ref} className="reveal flex items-start gap-3 leading-[2.15]" style={{ fontSize: "clamp(14px,1.05vw,16px)", color: "var(--ink)" }}>
@@ -68,7 +69,7 @@ function Credential({ children, delay }: { children: React.ReactNode; delay: num
   );
 }
 
-function Latin({ children }: { children: React.ReactNode }) {
+function Latin({ children }: { children: ReactNode }) {
   return <span style={{ fontFamily: "'Univia Pro', 'Cormorant Garamond', serif", letterSpacing: "0.02em" }}>{children}</span>;
 }
 
@@ -82,7 +83,7 @@ function Spread({
   name: string;
   portrait: string;
   objectPosition: string;
-  credentials: React.ReactNode[];
+  credentials: ReactNode[];
   mirrored?: boolean;
 }) {
   const headRef = useReveal<HTMLDivElement>(120);
