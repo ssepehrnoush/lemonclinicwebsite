@@ -8,6 +8,7 @@ type Props = {
   rounded?: number | string;
   loading?: "lazy" | "eager";
   fetchPriority?: "high" | "low" | "auto";
+  bordered?: boolean;
 };
 
 /**
@@ -23,6 +24,7 @@ export function ContainImage({
   rounded = 20,
   loading = "lazy",
   fetchPriority,
+  bordered = true,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -51,9 +53,9 @@ export function ContainImage({
   const wrapperStyle: CSSProperties = {
     aspectRatio: ratio,
     borderRadius: rounded,
-    border: "1px solid var(--line)",
+    border: bordered ? "1px solid var(--line)" : "none",
     background: "radial-gradient(120% 80% at 50% 0%, rgba(185,154,92,0.10), rgba(7,7,10,0.6) 70%)",
-    boxShadow: "0 20px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,246,204,0.04)",
+    boxShadow: bordered ? "0 20px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,246,204,0.04)" : "none",
     perspective: 900,
   };
 
