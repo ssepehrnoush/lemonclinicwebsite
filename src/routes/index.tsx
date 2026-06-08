@@ -4,7 +4,7 @@ import { Framed } from "@/components/Framed";
 import { ScrollCue } from "@/components/ScrollCue";
 import { LemonOrnament, IconPin, IconPhone, IconWhatsApp, IconClock, IconCheck } from "@/components/GoldIcon";
 import { useReveal } from "@/components/useReveal";
-import landingAsset from "@/assets/landing.png.asset.json";
+import landingAsset from "@/assets/reception.png.asset.json";
 import mapAsset from "@/assets/clinic_map.jpg.asset.json";
 import unitAsset from "@/assets/doctor_unit.png.asset.json";
 import logoCutout from "@/assets/logo_cutout.png.asset.json";
@@ -35,32 +35,66 @@ function Index() {
   useEffect(() => {
     const onScroll = () => {
       const vh = window.innerHeight || 1;
-      setHeroP(Math.min(1, Math.max(0, window.scrollY / vh)));
+      // Slow fade: complete the crossfade over ~3 viewport heights of scrolling
+      setHeroP(Math.min(1, Math.max(0, window.scrollY / (vh * 3))));
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const heroOpacity = Math.max(0, 1 - heroP * 1.1);
-  const welcomeOpacity = Math.min(1, Math.max(0, heroP * 1.2 - 0.05));
+  const heroOpacity = Math.max(0, 1 - heroP * 1.05);
+  const welcomeOpacity = Math.min(1, Math.max(0, heroP * 1.15 - 0.05));
+  const heroScale = 1 + heroP * 0.08;
+  const heroBlur = heroP * 6;
   return (
     <Layout>
       {/* 1 + 1b) HERO ↔ WELCOME crossfade scene */}
-      <div className="relative" style={{ height: "200vh" }}>
+      <div className="relative" style={{ height: "500vh" }}>
         {/* HERO (sticky, fades out) */}
         <section
           className="sticky top-0 h-screen min-h-[640px] w-full overflow-hidden"
           style={{ opacity: heroOpacity, zIndex: 1, willChange: "opacity" }}
           aria-hidden={heroOpacity < 0.05}
         >
-          <img
-            src={landingAsset.url}
-            alt="ورودی کلینیک لمون در باغ زیتون"
-            className="absolute inset-0 h-full w-full object-cover"
-            fetchPriority="high"
-            decoding="async"
+          {/* Ken Burns image with scroll-driven zoom + blur */}
+          <div
+            className="absolute inset-0 h-full w-full"
+            style={{
+              transform: `scale(${heroScale})`,
+              filter: `blur(${heroBlur}px)`,
+              transformOrigin: "50% 55%",
+              transition: "transform 120ms linear, filter 120ms linear",
+              willChange: "transform, filter",
+            }}
+          >
+            <img
+              src={landingAsset.url}
+              alt="پذیرش کلینیک زیبایی لمون"
+              className="absolute inset-0 h-full w-full object-cover hero-kenburns"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </div>
+          {/* Soft gold glow overlay (pendant lights breathing) */}
+          <div
+            className="pointer-events-none absolute inset-0 hero-glow"
+            style={{
+              background:
+                "radial-gradient(60% 40% at 50% 18%, rgba(244,210,120,0.28), transparent 70%)",
+              mixBlendMode: "screen",
+            }}
           />
-          <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: "linear-gradient(to top, rgba(43,38,32,0.42), rgba(43,38,32,0.22) 55%, transparent)" }} />
+          {/* Subtle gold shimmer sweep */}
+          <div className="pointer-events-none absolute inset-0 hero-shimmer" />
+          {/* Vignette */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(120% 80% at 50% 50%, transparent 55%, rgba(43,38,32,0.35) 100%)",
+            }}
+          />
+          <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: "linear-gradient(to top, rgba(43,38,32,0.55), rgba(43,38,32,0.28) 55%, transparent)" }} />
           <div dir="rtl" className="absolute inset-x-0 bottom-0 z-10">
             <div className="mx-auto max-w-[1200px] px-6 pb-24 md:pb-28">
               <div className="ms-auto max-w-[560px] text-right">
