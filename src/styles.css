@@ -1,7 +1,36 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+
+/* Self-hosted brand fonts (CDN-served, browser-fetched at runtime) */
+@font-face {
+  font-family: "IRANFaNum";
+  src: url("/__l5e/assets-v1/73b5aa39-3fc2-4fea-974b-3ccf796aaac1/IRANFaNum-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANFaNum";
+  src: url("/__l5e/assets-v1/269b63be-bdea-4729-8f7e-29c9cbd1ceee/IRANFaNum-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nian";
+  src: url("/__l5e/assets-v1/137f2f99-7c36-4b0d-a125-e599cded22e3/Nian-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Univia Pro";
+  src: url("/__l5e/assets-v1/24272024-f49f-4eb7-8245-22eed45116c6/UniviaPro-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -85,9 +114,9 @@
   --sage: #8BAF9A;
   --sage-deep: #5E7E6B;
   --line: rgba(201,169,110,0.25);
-  --font-display: "Cormorant Garamond", "Vazirmatn", serif;
-  --font-fa: "Vazirmatn", system-ui, sans-serif;
-  --font-latin: "Inter", system-ui, sans-serif;
+  --font-display: "Nian", "IRANFaNum", system-ui, sans-serif;
+  --font-fa: "IRANFaNum", system-ui, sans-serif;
+  --font-latin: "Univia Pro", "IRANFaNum", system-ui, sans-serif;
   --background: #F4EFE6;
   --foreground: #2B2620;
   --card: oklch(1 0 0);
