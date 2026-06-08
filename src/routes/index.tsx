@@ -120,20 +120,7 @@ function Index() {
           aria-hidden={welcomeOpacity < 0.05}
         >
           <div ref={welcomeRef} className="relative mx-auto max-w-[760px] text-center">
-            <img
-              src={logoCutout.url}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain"
-              style={{
-                width: "min(560px, 86%)",
-                opacity: logoOpacity,
-                transform: `translate(-50%, -50%) scale(${logoScale})`,
-                filter: `drop-shadow(0 0 ${28 + logoP * 40}px rgba(201,168,76,${0.22 + logoP * 0.5}))`,
-                transition: "opacity 200ms linear, filter 200ms linear",
-                willChange: "transform, opacity, filter",
-              }}
-            />
+            <LemonOrnament aria-hidden="true" />
             <div className="relative">
               <p className="text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
                 به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
