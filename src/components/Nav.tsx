@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import logoCutout from "@/assets/logo_cutout.png.asset.json";
 
 type MenuItem =
-  | { label: string; to: "/laser" | "/facial" | "/botox" | "/prp" | "/rejuvenation" }
+  | { label: string; to: "/laser" | "/facial" | "/botox" | "/prp" | "/rejuvenation" | "/endolift" }
   | { label: string; href: "/hair" };
 
 const LINES = [
