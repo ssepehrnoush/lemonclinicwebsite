@@ -46,6 +46,10 @@ function Index() {
   const welcomeOpacity = Math.min(1, Math.max(0, heroP * 1.15 - 0.05));
   const heroScale = 1 + heroP * 0.08;
   const heroBlur = heroP * 6;
+  // Welcome logo reveal: starts subtle, grows + becomes fully visible as user scrolls past
+  const logoP = Math.min(1, Math.max(0, (heroP - 0.25) / 0.6));
+  const logoOpacity = 0.08 + logoP * 0.92;
+  const logoScale = 0.9 + logoP * 0.5;
   return (
     <Layout>
       {/* 1 + 1b) HERO ↔ WELCOME crossfade scene */}
@@ -126,11 +130,17 @@ function Index() {
               alt=""
               aria-hidden="true"
               className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain"
-              style={{ width: "min(560px, 86%)", opacity: 0.08, filter: "drop-shadow(0 0 28px rgba(201,168,76,0.22))" }}
+              style={{
+                width: "min(560px, 86%)",
+                opacity: logoOpacity,
+                transform: `translate(-50%, -50%) scale(${logoScale})`,
+                filter: `drop-shadow(0 0 ${28 + logoP * 40}px rgba(201,168,76,${0.22 + logoP * 0.5}))`,
+                transition: "opacity 200ms linear, filter 200ms linear",
+                willChange: "transform, opacity, filter",
+              }}
             />
             <div className="relative">
-              <div className="flex justify-center"><LemonOrnament size={56} /></div>
-              <p className="mt-8 text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
+              <p className="text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
                 به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
               </p>
             </div>
