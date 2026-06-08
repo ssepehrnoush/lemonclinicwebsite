@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { LemonOrnament } from "@/components/GoldIcon";
 import { GoldArrow } from "@/components/GoldArrow";
 import { useReveal } from "@/components/useReveal";
+import { ContainImage } from "@/components/ContainImage";
 import laserImg from "@/assets/laser_square.jpg.asset.json";
 import facialImg from "@/assets/facial_square.jpg.asset.json";
 import botoxImg from "@/assets/dr_ghafouri_square.jpg.asset.json";
@@ -110,15 +111,13 @@ function LinkedCard({ card }: { card: Card }) {
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(201,169,110,0.6), transparent)" }}
       />
-      <div className="relative h-[200px] w-full overflow-hidden">
-        <img
-          src={card.image}
-          alt={card.alt}
-          loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to top, rgba(43,38,32,0.18), transparent 55%)" }} />
-      </div>
+      <ContainImage
+        src={card.image}
+        alt={card.alt}
+        ratio={card.featured ? "16 / 9" : "4 / 3"}
+        rounded={0}
+        bordered={false}
+      />
       <div style={{ padding: card.featured ? "clamp(24px,2.8vw,36px)" : "clamp(20px,2.2vw,28px)" }}>
         <h3
           className="font-display"

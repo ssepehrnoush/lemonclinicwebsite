@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { Framed } from "@/components/Framed";
 import { LemonOrnament } from "@/components/GoldIcon";
 import { useReveal } from "@/components/useReveal";
+import { ContainImage } from "@/components/ContainImage";
 
 export function LatinToken({ children }: { children: ReactNode }) {
   return <span className="font-latin">{children}</span>;
@@ -30,7 +30,6 @@ export function ServiceHero({
   description,
   image,
   alt,
-  objectPosition = "center",
   centered,
 }: {
   label: string;
@@ -59,7 +58,7 @@ export function ServiceHero({
           </p>
         )}
         <div className={`mt-10 ${centered ? "mx-auto max-w-[920px]" : "max-w-[780px]"}`}>
-          <Framed src={image} alt={alt} ratio="16 / 10" loading="lazy" style={{ objectPosition }} />
+          <ContainImage src={image} alt={alt} ratio="16 / 10" />
         </div>
       </div>
     </section>
