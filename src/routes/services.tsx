@@ -111,13 +111,32 @@ function LinkedCard({ card }: { card: Card }) {
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(201,169,110,0.6), transparent)" }}
       />
-      <ContainImage
-        src={card.image}
-        alt={card.alt}
-        ratio={card.featured ? "16 / 9" : "4 / 3"}
-        rounded={0}
-        bordered={false}
-      />
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ aspectRatio: card.featured ? "16 / 9" : "4 / 3" }}
+      >
+        <img
+          src={card.image}
+          alt={card.alt}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+          style={{
+            borderRadius: 18,
+            WebkitMaskImage:
+              "radial-gradient(120% 120% at 50% 50%, #000 55%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 86%, rgba(0,0,0,0) 100%)",
+            maskImage:
+              "radial-gradient(120% 120% at 50% 50%, #000 55%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 86%, rgba(0,0,0,0) 100%)",
+          }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(120% 120% at 50% 50%, transparent 60%, var(--surface) 100%)",
+          }}
+        />
+      </div>
       <div style={{ padding: card.featured ? "clamp(24px,2.8vw,36px)" : "clamp(20px,2.2vw,28px)" }}>
         <h3
           className="font-display"
