@@ -1,6 +1,6 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@source "../src";
 
 /* Self-hosted brand fonts (CDN-served, browser-fetched at runtime) */
 @font-face {
