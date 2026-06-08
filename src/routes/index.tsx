@@ -7,6 +7,8 @@ import { useReveal } from "@/components/useReveal";
 import landingAsset from "@/assets/landing.png.asset.json";
 import mapAsset from "@/assets/clinic_map.jpg.asset.json";
 import unitAsset from "@/assets/doctor_unit.png.asset.json";
+import logoCutout from "@/assets/logo_cutout.png.asset.json";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,46 +31,71 @@ export const Route = createFileRoute("/")({
 function Index() {
   const welcomeRef = useReveal<HTMLDivElement>();
   const hygieneRef = useReveal<HTMLDivElement>();
+  const [heroP, setHeroP] = useState(0);
+  useEffect(() => {
+    const onScroll = () => {
+      const vh = window.innerHeight || 1;
+      setHeroP(Math.min(1, Math.max(0, window.scrollY / vh)));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const heroOpacity = 1 - heroP;
   return (
     <Layout>
       {/* 1) HERO */}
-      <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
-        <img
-          src={landingAsset.url}
-          alt="ورودی کلینیک لمون در باغ زیتون"
-          className="absolute inset-0 h-full w-full object-cover"
-          fetchPriority="high"
-          decoding="async"
-        />
-        {/* bottom warm scrim */}
-        <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: "linear-gradient(to top, rgba(43,38,32,0.42), rgba(43,38,32,0.22) 55%, transparent)" }} />
-        {/* overlay text — lower band, right-aligned */}
-        <div dir="rtl" className="absolute inset-x-0 bottom-0 z-10">
-          <div className="mx-auto max-w-[1200px] px-6 pb-24 md:pb-28">
-            <div className="ms-auto max-w-[560px] text-right">
-              <h1 className="font-display text-[#FBF8F2]" style={{ fontWeight: 700, fontSize: "clamp(28px,4.4vw,46px)", lineHeight: 1.2, textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}>
-                تعریف دوباره‌ی زیبایی و اصالت
-              </h1>
-              <div className="mt-6">
-                <a href="#contact" className="group inline-flex items-center gap-3 rounded-full px-6 py-3 text-[14px] text-[#FBF8F2] backdrop-blur-sm transition-all duration-500"
-                  style={{ border: "1px solid rgba(244,230,146,0.6)", background: "rgba(43,38,32,0.18)" }}>
-                  <span>مشاهده خدمات VIP</span>
-                  <span className="text-gold-gradient transition-transform duration-500 group-hover:-translate-x-1">←</span>
-                </a>
+      <section className="relative h-screen min-h-[640px] w-full">
+        <div
+          className="fixed inset-0 w-full h-screen overflow-hidden pointer-events-none"
+          style={{ opacity: heroOpacity, zIndex: 0 }}
+        >
+          <img
+            src={landingAsset.url}
+            alt="ورودی کلینیک لمون در باغ زیتون"
+            className="absolute inset-0 h-full w-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+          />
+          {/* bottom warm scrim */}
+          <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: "linear-gradient(to top, rgba(43,38,32,0.42), rgba(43,38,32,0.22) 55%, transparent)" }} />
+          {/* overlay text — lower band, right-aligned */}
+          <div dir="rtl" className="absolute inset-x-0 bottom-0 pointer-events-auto">
+            <div className="mx-auto max-w-[1200px] px-6 pb-24 md:pb-28">
+              <div className="ms-auto max-w-[560px] text-right">
+                <h1 className="font-display text-[#FBF8F2]" style={{ fontWeight: 700, fontSize: "clamp(28px,4.4vw,46px)", lineHeight: 1.2, textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}>
+                  تعریف دوباره‌ی زیبایی و اصالت
+                </h1>
+                <div className="mt-6">
+                  <a href="#contact" className="group inline-flex items-center gap-3 rounded-full px-6 py-3 text-[14px] text-[#FBF8F2] backdrop-blur-sm transition-all duration-500"
+                    style={{ border: "1px solid rgba(244,230,146,0.6)", background: "rgba(43,38,32,0.18)" }}>
+                    <span>مشاهده خدمات VIP</span>
+                    <span className="text-gold-gradient transition-transform duration-500 group-hover:-translate-x-1">←</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+          <ScrollCue />
         </div>
-        <ScrollCue />
       </section>
 
       {/* 1b) WELCOME LINE */}
-      <section className="px-6">
-        <div ref={welcomeRef} className="reveal mx-auto max-w-[760px] py-[clamp(80px,12vw,160px)] text-center">
-          <div className="flex justify-center"><LemonOrnament size={56} /></div>
-          <p className="mt-8 text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
-            به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
-          </p>
+      <section className="relative px-6" style={{ background: "var(--canvas)" }}>
+        <div ref={welcomeRef} className="reveal relative mx-auto max-w-[760px] py-[clamp(80px,12vw,160px)] text-center">
+          <img
+            src={logoCutout.url}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain"
+            style={{ width: "min(560px, 86%)", opacity: 0.07, filter: "drop-shadow(0 0 28px rgba(201,168,76,0.18))" }}
+          />
+          <div className="relative">
+            <div className="flex justify-center"><LemonOrnament size={56} /></div>
+            <p className="mt-8 text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
+              به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
+            </p>
+          </div>
         </div>
       </section>
 
