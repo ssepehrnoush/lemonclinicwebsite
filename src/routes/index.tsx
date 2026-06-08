@@ -45,10 +45,6 @@ function Index() {
   const welcomeOpacity = Math.min(1, Math.max(0, heroP * 1.15 - 0.05));
   const heroScale = 1 + heroP * 0.08;
   const heroBlur = heroP * 6;
-  // Welcome logo reveal: starts subtle, grows + becomes fully visible as user scrolls past
-  const logoP = Math.min(1, Math.max(0, (heroP - 0.25) / 0.6));
-  const logoOpacity = 0.08 + logoP * 0.92;
-  const logoScale = 0.9 + logoP * 0.5;
   return (
     <Layout>
       {/* 1 + 1b) HERO ↔ WELCOME crossfade scene */}
