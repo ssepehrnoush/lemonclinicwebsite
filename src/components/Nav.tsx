@@ -37,6 +37,13 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobile) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, [mobile]);
+
   return (
     <>
       <div
@@ -107,7 +114,7 @@ export function Nav() {
 
       <div dir="rtl" className="fixed inset-0 z-[70] md:hidden" style={{ pointerEvents: mobile ? "auto" : "none" }} aria-hidden={!mobile}>
         <div className="absolute inset-0 bg-[rgba(43,38,32,0.4)] transition-opacity" style={{ opacity: mobile ? 1 : 0 }} onClick={() => setMobile(false)} />
-          <aside className="absolute right-0 top-0 h-full w-[82%] max-w-sm bg-[var(--canvas)] p-8 transition-transform duration-500" style={{ transform: `translateX(${mobile ? "0" : "100%"})`, borderLeft: "1px solid var(--line)" }}>
+          <aside className="absolute right-0 top-0 h-full w-[82%] max-w-sm bg-[var(--canvas)] p-8 transition-transform duration-500 overflow-y-auto overscroll-contain" style={{ transform: `translateX(${mobile ? "0" : "100%"})`, borderLeft: "1px solid var(--line)", WebkitOverflowScrolling: "touch" }}>
           <div className="mb-10 flex items-center gap-3">
             <img src={logoCutout.url} alt="" className="h-16 w-16 object-contain" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.55)) drop-shadow(0 0 18px rgba(201,168,76,0.28))" }} />
             <span className="font-latin tracking-[0.34em] text-[15px] text-gold-gradient">LEMON</span>
