@@ -72,7 +72,7 @@ function ServicesPage() {
       {/* Bento grid */}
       <section className="px-6 pb-[clamp(80px,12vw,160px)] pt-[clamp(48px,7vw,96px)]">
         <div className="mx-auto max-w-[1200px]">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
             {cards.map((c) => (
               <LinkedCard key={c.title} card={c} />
             ))}
@@ -85,17 +85,16 @@ function ServicesPage() {
 
 function LinkedCard({ card }: { card: Card }) {
   const ref = useReveal<HTMLAnchorElement>(card.delay);
-  const span = card.span === "wide" ? "md:col-span-8" : "md:col-span-4";
   return (
     <a
       href={card.to!}
       ref={ref}
-      className={`reveal group relative block overflow-hidden rounded-[20px] ${span}`}
+      className={`reveal group relative block overflow-hidden rounded-[20px]`}
       style={{
         background: "var(--surface)",
         border: "1px solid var(--line)",
         boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
-        minHeight: card.featured ? 380 : 340,
+        minHeight: 340,
         transition: "transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s",
       }}
       onMouseEnter={(e) => {
@@ -113,7 +112,7 @@ function LinkedCard({ card }: { card: Card }) {
       />
       <div
         className="relative w-full overflow-hidden"
-        style={{ aspectRatio: card.featured ? "16 / 9" : "4 / 3" }}
+        style={{ aspectRatio: "4 / 3" }}
       >
         <img
           src={card.image}
@@ -137,13 +136,13 @@ function LinkedCard({ card }: { card: Card }) {
           }}
         />
       </div>
-      <div style={{ padding: card.featured ? "clamp(24px,2.8vw,36px)" : "clamp(20px,2.2vw,28px)" }}>
+      <div style={{ padding: "clamp(20px,2.2vw,28px)" }}>
         <h3
           className="font-display"
           style={{
             fontWeight: 700,
             lineHeight: 1.3,
-            fontSize: card.featured ? "clamp(22px,2.4vw,30px)" : "clamp(18px,1.6vw,22px)",
+            fontSize: "clamp(18px,1.6vw,22px)",
           }}
         >
           {card.title}
