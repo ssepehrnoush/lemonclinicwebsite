@@ -47,10 +47,10 @@ export function Nav() {
         dir="rtl"
         className="fixed inset-x-0 top-0 z-50 transition-colors duration-500"
         style={{
-          backgroundColor: scrolled ? "rgba(10,9,7,0.55)" : "transparent",
-          backdropFilter: scrolled ? "blur(16px) saturate(140%)" : undefined,
-          WebkitBackdropFilter: scrolled ? "blur(16px) saturate(140%)" : undefined,
-          borderBottom: scrolled ? "1px solid rgba(180,150,90,0.14)" : "1px solid transparent",
+          backgroundColor: scrolled ? "rgba(4,19,15,0.55)" : "transparent",
+          backdropFilter: scrolled ? "blur(16px) saturate(150%)" : undefined,
+          WebkitBackdropFilter: scrolled ? "blur(16px) saturate(150%)" : undefined,
+          borderBottom: scrolled ? "1px solid rgba(201,168,76,0.16)" : "1px solid transparent",
         }}
       >
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 md:py-5">

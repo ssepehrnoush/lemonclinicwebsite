@@ -94,6 +94,8 @@
   --color-ink-soft: var(--ink-soft);
   --color-gold: var(--gold);
   --color-gold-deep: var(--gold-deep);
+  --color-emerald: var(--emerald);
+  --color-emerald-deep: var(--emerald-deep);
   --color-sage: var(--sage);
   --color-sage-deep: var(--sage-deep);
   --color-line: var(--line);
@@ -104,25 +106,28 @@
 
 :root {
   --radius: 0.625rem;
-  --canvas: #07070A;
-  --surface: #0E0E12;
-  --ink: #E8E2D2;
-  --ink-soft: #8A8473;
-  --gold: #B99A5C;
+  --canvas: #04130F;
+  --surface: #082019;
+  --ink: #F2E8D4;
+  --ink-soft: #9CB0A6;
+  --gold: #C9A84C;
   --gold-deep: #8C7138;
+  --emerald: #0D7A5F;
+  --emerald-deep: #06231C;
+  --emerald-glow: #1FAE82;
   --sage: #7FA08F;
   --sage-deep: #547062;
-  --line: rgba(185,154,92,0.14);
+  --line: rgba(201,168,76,0.18);
   --font-display: "Nian", "IRANFaNum", system-ui, sans-serif;
   --font-fa: "IRANFaNum", system-ui, sans-serif;
   --font-latin: "Univia Pro", "IRANFaNum", system-ui, sans-serif;
-  --background: #07070A;
-  --foreground: #E8E2D2;
+  --background: #04130F;
+  --foreground: #F2E8D4;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: #B99A5C;
+  --primary: #C9A84C;
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -204,11 +209,17 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #D8C083 0%, #BFA063 40%, #9F8447 70%, #6F5A2E 100%);
+    background: linear-gradient(135deg, #F0D78C 0%, #E5C266 40%, #C9A84C 70%, #8C7138 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
   .bg-gold-gradient {
-    background: linear-gradient(135deg, #D8C083 0%, #BFA063 40%, #9F8447 70%, #6F5A2E 100%);
+    background: linear-gradient(135deg, #F0D78C 0%, #E5C266 40%, #C9A84C 70%, #8C7138 100%);
+  }
+  .bg-emerald-radial {
+    background:
+      radial-gradient(60% 50% at 20% 10%, rgba(31,174,130,0.12), transparent 60%),
+      radial-gradient(50% 40% at 90% 90%, rgba(201,168,76,0.08), transparent 60%),
+      var(--canvas);
   }
   .hairline-gold { border-color: var(--line); }
   .card-soft {
