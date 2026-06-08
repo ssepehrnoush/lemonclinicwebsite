@@ -16,7 +16,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "کلینیک پزشکی زیبایی لمون" },
       { property: "og:description", content: "تعریف دوباره‌ی زیبایی و اصالت." },
       { property: "og:image", content: landingAsset.url },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/" }],
   }),
   component: Index,
 });

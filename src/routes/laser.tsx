@@ -17,7 +17,9 @@ export const Route = createFileRoute("/laser")({
       { name: "description", content: "صفحه تخصصی لیزر لمون با دستگاه کندلا شاتی آمریکا، پکیج‌ها و مراقبت‌های پس از درمان." },
       { property: "og:title", content: "لاین تخصصی لیزر با کندلا شاتی آمریکا" },
       { property: "og:description", content: "تجربه لیزر دقیق، کلینیکال و لوکس در کلینیک لمون." },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/laser" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/laser" }],
   }),
   component: LaserPage,
 });

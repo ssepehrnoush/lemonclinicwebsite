@@ -17,7 +17,9 @@ export const Route = createFileRoute("/hair")({
       { property: "og:title", content: "لاین مراقبتی مو و مزوتراپی کلینیک لمون" },
       { property: "og:description", content: "محصولات HairCare از برند Revitacare فرانسه برای درمان ریزش، آبرسانی و بازسازی مو." },
       { property: "og:image", content: haircareAsset.url },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/hair" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/hair" }],
   }),
   component: HairPage,
 });
