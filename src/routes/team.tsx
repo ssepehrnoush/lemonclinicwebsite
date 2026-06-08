@@ -72,13 +72,11 @@ function Latin({ children }: { children: ReactNode }) {
 function Spread({
   name,
   portrait,
-  objectPosition,
   credentials,
   mirrored,
 }: {
   name: string;
   portrait: string;
-  objectPosition: string;
   credentials: ReactNode[];
   mirrored?: boolean;
 }) {
@@ -86,7 +84,7 @@ function Spread({
   return (
     <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-14">
       <div className={`md:col-span-5 ${mirrored ? "md:order-2" : "md:order-1"}`}>
-        <Portrait src={portrait} alt={name} objectPosition={objectPosition} />
+        <Portrait src={portrait} alt={name} />
       </div>
       <div className={`md:col-span-7 ${mirrored ? "md:order-1" : "md:order-2"}`}>
         <div ref={headRef} className="reveal">
