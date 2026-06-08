@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { LemonOrnament } from "@/components/GoldIcon";
 import { GoldArrow } from "@/components/GoldArrow";
 import { useReveal } from "@/components/useReveal";
-import { ContainImage } from "@/components/ContainImage";
+
 import laserImg from "@/assets/laser_square.jpg.asset.json";
 import facialImg from "@/assets/facial_square.jpg.asset.json";
 import botoxImg from "@/assets/dr_ghafouri_square.jpg.asset.json";
