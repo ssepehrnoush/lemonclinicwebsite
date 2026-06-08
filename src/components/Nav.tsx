@@ -9,7 +9,7 @@ const LINES = [
   { label: "PRP — سلول‌های فعال", to: "/prp" },
   { label: "مو و مزوتراپی", href: "/hair" },
   { label: "جوانسازی", to: "/rejuvenation" },
-];
+] as const;
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
