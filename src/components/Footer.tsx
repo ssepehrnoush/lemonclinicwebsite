@@ -1,4 +1,5 @@
-import logoAsset from "@/assets/logo.jpg.asset.json";
+import { Link } from "@tanstack/react-router";
+import logoCutout from "@/assets/logo_cutout.png.asset.json";
 import { IconPin, IconPhone, IconWhatsApp, IconClock } from "./GoldIcon";
 
 export function Footer() {
@@ -8,7 +9,7 @@ export function Footer() {
         <div className="grid gap-14 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3">
-              <img src={logoAsset.url} alt="" className="h-12 w-12 rounded-full ring-1 ring-[var(--line)]" />
+              <img src={logoCutout.url} alt="" className="h-12 w-12 object-contain" />
               <div>
                 <div className="font-latin tracking-[0.32em] text-gold-gradient">LEMON</div>
                 <div className="mt-1 text-[13px] text-[var(--ink-soft)]">کلینیک پزشکی زیبایی لمون</div>
@@ -20,7 +21,16 @@ export function Footer() {
           <div>
             <h4 className="mb-5 text-[12px] tracking-[0.3em] text-[var(--ink-soft)]">دسترسی سریع</h4>
             <ul className="space-y-3 text-[14px]">
-              <li>خانه</li><li>خدمات VIP</li><li>متخصصین لمون</li><li>لاین‌های اختصاصی</li>
+              <li><Link to="/" className="hover:text-[var(--gold-deep)] transition-colors">خانه</Link></li>
+              <li><Link to="/services" className="hover:text-[var(--gold-deep)] transition-colors">خدمات VIP</Link></li>
+              <li><Link to="/team" className="hover:text-[var(--gold-deep)] transition-colors">متخصصین لمون</Link></li>
+              <li><Link to="/endolift" className="hover:text-[var(--gold-deep)] transition-colors">اندولیفت</Link></li>
+              <li><Link to="/laser" className="hover:text-[var(--gold-deep)] transition-colors">لیزر</Link></li>
+              <li><Link to="/facial" className="hover:text-[var(--gold-deep)] transition-colors">فیشال و درمال</Link></li>
+              <li><Link to="/botox" className="hover:text-[var(--gold-deep)] transition-colors">بوتاکس</Link></li>
+              <li><Link to="/prp" className="hover:text-[var(--gold-deep)] transition-colors">PRP</Link></li>
+              <li><a href="/hair" className="hover:text-[var(--gold-deep)] transition-colors">مو و مزوتراپی</a></li>
+              <li><Link to="/rejuvenation" className="hover:text-[var(--gold-deep)] transition-colors">جوانسازی</Link></li>
             </ul>
           </div>
 

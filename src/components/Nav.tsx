@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import logoAsset from "@/assets/logo.jpg.asset.json";
+import logoCutout from "@/assets/logo_cutout.png.asset.json";
 
 type MenuItem =
   | { label: string; to: "/laser" | "/facial" | "/botox" | "/prp" | "/rejuvenation" }
@@ -13,6 +13,7 @@ const LINES = [
   { label: "PRP — سلول‌های فعال", to: "/prp" },
   { label: "مو و مزوتراپی", href: "/hair" },
   { label: "جوانسازی", to: "/rejuvenation" },
+  { label: "اندولیفت", to: "/endolift" },
 ] satisfies readonly MenuItem[];
 
 export function Nav() {
@@ -20,6 +21,9 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [progress, setProgress] = useState(0);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
+  const showLogo = !isHome || scrolled;
 
   useEffect(() => {
     const onScroll = () => {
@@ -49,9 +53,11 @@ export function Nav() {
         }}
       >
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 md:py-5">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="LEMON" className="h-11 w-11 rounded-full object-cover ring-1 ring-[var(--line)]" />
-            <span className={`hidden font-latin text-[13px] tracking-[0.32em] md:inline ${scrolled ? "text-gold-gradient" : "text-[#FBF8F2]"}`}>LEMON</span>
+          <Link to="/" className="flex items-center gap-3" aria-label="کلینیک لمون — خانه">
+            {showLogo && (
+              <img src={logoCutout.url} alt="LEMON" className="h-11 w-11 object-contain" />
+            )}
+            <span className={`font-latin text-[13px] tracking-[0.32em] ${scrolled ? "text-gold-gradient" : "text-[#FBF8F2]"} hidden md:inline`}>LEMON</span>
           </Link>
 
           <nav className="hidden items-center gap-10 md:flex" style={{ color: scrolled ? "var(--ink)" : "#FBF8F2" }}>
@@ -97,7 +103,7 @@ export function Nav() {
         <div className="absolute inset-0 bg-[rgba(43,38,32,0.4)] transition-opacity" style={{ opacity: mobile ? 1 : 0 }} onClick={() => setMobile(false)} />
         <aside className="absolute right-0 top-0 h-full w-[82%] max-w-sm bg-[var(--canvas)] p-8 transition-transform duration-500" style={{ transform: `translateX(${mobile ? "0" : "100%"})`, borderLeft: "1px solid var(--line)" }}>
           <div className="mb-10 flex items-center gap-3">
-            <img src={logoAsset.url} alt="" className="h-10 w-10 rounded-full" />
+            <img src={logoCutout.url} alt="" className="h-10 w-10 object-contain" />
             <span className="font-latin tracking-[0.32em] text-gold-gradient">LEMON</span>
           </div>
           <ul className="space-y-5 text-[17px]">
