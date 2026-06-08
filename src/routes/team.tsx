@@ -148,7 +148,6 @@ function TeamPage() {
             mirrored
             name="دکتر مصطفی هواسی"
             portrait={drHaavasiAsset.url}
-            objectPosition="80% center"
             credentials={[
               <>دانش‌آموخته دکتری حرفه‌ای پزشکی از دانشگاه علوم پزشکی ایلام.</>,
               <>بیش از ۱۲ سال سابقه مستمر در حوزه طب زیبایی و متدهای نوین جوانسازی.</>,
