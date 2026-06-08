@@ -18,7 +18,10 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: landingAsset.url },
       { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/" }],
+    links: [
+      { rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/" },
+      { rel: "preload", as: "image", href: landingAsset.url, fetchpriority: "high" } as any,
+    ],
   }),
   component: Index,
 });
@@ -30,7 +33,13 @@ function Index() {
     <Layout>
       {/* 1) HERO */}
       <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
-        <img src={landingAsset.url} alt="ورودی کلینیک لمون در باغ زیتون" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src={landingAsset.url}
+          alt="ورودی کلینیک لمون در باغ زیتون"
+          className="absolute inset-0 h-full w-full object-cover"
+          fetchPriority="high"
+          decoding="async"
+        />
         {/* bottom warm scrim */}
         <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: "linear-gradient(to top, rgba(43,38,32,0.42), rgba(43,38,32,0.22) 55%, transparent)" }} />
         {/* overlay text — lower band, right-aligned */}
