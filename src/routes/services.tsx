@@ -116,7 +116,7 @@ function LinkedCard({ card }: { card: Card }) {
         alt={card.alt}
         ratio={card.featured ? "16 / 9" : "4 / 3"}
         rounded={0}
-        className="!border-0 !border-b !border-[var(--line)]"
+        bordered={false}
       />
       <div style={{ padding: card.featured ? "clamp(24px,2.8vw,36px)" : "clamp(20px,2.2vw,28px)" }}>
         <h3
