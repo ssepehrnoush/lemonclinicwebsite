@@ -45,7 +45,7 @@ export function ServiceHero({
     <section className="px-6 pt-[clamp(120px,16vw,180px)]">
       <div ref={ref} className={`reveal mx-auto max-w-[1200px] ${centered ? "text-center" : ""}`}>
         <div className={`flex items-center gap-3 text-[12px] tracking-[0.32em] text-[var(--ink-soft)] ${centered ? "justify-center" : ""}`}>
-          <LemonOrnament size={22} />
+          <LemonOrnament size={32} />
           <span className="h-px w-16 bg-gold-gradient" />
           <span>{label}</span>
         </div>
@@ -118,7 +118,7 @@ export function AftercareCard({ items, note }: { items: ReactNode[]; note?: Reac
       }}
     >
       <div className="flex items-center gap-3 text-[11px] tracking-[0.28em] text-[var(--ink-soft)]">
-        <LemonOrnament size={18} />
+        <LemonOrnament size={26} />
         <span>مراقبت‌های پس از درمان</span>
       </div>
       <ul className="mt-6 space-y-4">
