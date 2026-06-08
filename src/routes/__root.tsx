@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "کلینیک پزشکی زیبایی لمون" },
+      { name: "description", content: "کلینیک پزشکی زیبایی لمون، ارائه‌دهنده خدمات تخصصی پوست، زیبایی و جوانسازی در تهران با رویکردی مدرن و ایمن." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "کلینیک پزشکی زیبایی لمون" },
+      { property: "og:description", content: "کلینیک پزشکی زیبایی لمون، ارائه‌دهنده خدمات تخصصی پوست، زیبایی و جوانسازی در تهران با رویکردی مدرن و ایمن." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "کلینیک پزشکی زیبایی لمون" },
+      { name: "twitter:description", content: "کلینیک پزشکی زیبایی لمون، ارائه‌دهنده خدمات تخصصی پوست، زیبایی و جوانسازی در تهران با رویکردی مدرن و ایمن." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/41f0bc07-5871-4958-9a7e-8bf0f698dd19/id-preview-e569d3e1--9c2ceba0-8818-4ded-a6d1-bf4563b632fb.lovable.app-1780932438485.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/41f0bc07-5871-4958-9a7e-8bf0f698dd19/id-preview-e569d3e1--9c2ceba0-8818-4ded-a6d1-bf4563b632fb.lovable.app-1780932438485.png" },
     ],
     links: [
       {
