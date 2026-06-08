@@ -66,7 +66,15 @@ function Index() {
         <div className="mx-auto max-w-[1200px] py-[clamp(60px,9vw,120px)]">
           <div className="grid items-center gap-14 md:grid-cols-12">
             <div className="md:col-span-7">
-              <Framed src={mapAsset.url} alt="موقعیت کلینیک لمون روی نقشه" ratio="1 / 1" />
+              <a
+                href="https://maps.google.com?q=%DA%A9%D9%84%DB%8C%D9%86%DB%8C%DA%A9%20%D8%B2%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C%20%D9%84%D9%85%D9%88%D9%86,%20District%2022,%20Tehran,%20Tehran%20Province,%20Iran&ftid=0x3f8def006236f4c9:0x1df9f00288829bf2"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="مشاهده موقعیت کلینیک لمون روی گوگل مپ"
+                className="block transition-transform duration-500 hover:scale-[1.01]"
+              >
+                <Framed src={mapAsset.url} alt="موقعیت کلینیک لمون روی نقشه — کلیک کنید" ratio="1 / 1" />
+              </a>
             </div>
             <div className="md:col-span-5">
               <div className="mb-4 inline-flex items-center gap-3 text-[12px] tracking-[0.32em] text-[var(--ink-soft)]">
