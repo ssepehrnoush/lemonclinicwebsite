@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { ContainImage } from "@/components/ContainImage";
 import { Layout } from "@/components/Layout";
 import { LemonOrnament } from "@/components/GoldIcon";
 import { useReveal } from "@/components/useReveal";
