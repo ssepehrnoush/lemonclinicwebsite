@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as RejuvenationRouteImport } from './routes/rejuvenation'
 import { Route as PrpRouteImport } from './routes/prp'
 import { Route as LaserRouteImport } from './routes/laser'
 import { Route as FacialRouteImport } from './routes/facial'
@@ -25,6 +26,11 @@ const TeamRoute = TeamRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RejuvenationRoute = RejuvenationRouteImport.update({
+  id: '/rejuvenation',
+  path: '/rejuvenation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrpRoute = PrpRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/facial': typeof FacialRoute
   '/laser': typeof LaserRoute
   '/prp': typeof PrpRoute
+  '/rejuvenation': typeof RejuvenationRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/facial': typeof FacialRoute
   '/laser': typeof LaserRoute
   '/prp': typeof PrpRoute
+  '/rejuvenation': typeof RejuvenationRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/facial': typeof FacialRoute
   '/laser': typeof LaserRoute
   '/prp': typeof PrpRoute
+  '/rejuvenation': typeof RejuvenationRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
 }
@@ -89,10 +98,19 @@ export interface FileRouteTypes {
     | '/facial'
     | '/laser'
     | '/prp'
+    | '/rejuvenation'
     | '/services'
     | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/botox' | '/facial' | '/laser' | '/prp' | '/services' | '/team'
+  to:
+    | '/'
+    | '/botox'
+    | '/facial'
+    | '/laser'
+    | '/prp'
+    | '/rejuvenation'
+    | '/services'
+    | '/team'
   id:
     | '__root__'
     | '/'
@@ -100,6 +118,7 @@ export interface FileRouteTypes {
     | '/facial'
     | '/laser'
     | '/prp'
+    | '/rejuvenation'
     | '/services'
     | '/team'
   fileRoutesById: FileRoutesById
@@ -110,6 +129,7 @@ export interface RootRouteChildren {
   FacialRoute: typeof FacialRoute
   LaserRoute: typeof LaserRoute
   PrpRoute: typeof PrpRoute
+  RejuvenationRoute: typeof RejuvenationRoute
   ServicesRoute: typeof ServicesRoute
   TeamRoute: typeof TeamRoute
 }
@@ -128,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rejuvenation': {
+      id: '/rejuvenation'
+      path: '/rejuvenation'
+      fullPath: '/rejuvenation'
+      preLoaderRoute: typeof RejuvenationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prp': {
@@ -174,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   FacialRoute: FacialRoute,
   LaserRoute: LaserRoute,
   PrpRoute: PrpRoute,
+  RejuvenationRoute: RejuvenationRoute,
   ServicesRoute: ServicesRoute,
   TeamRoute: TeamRoute,
 }
