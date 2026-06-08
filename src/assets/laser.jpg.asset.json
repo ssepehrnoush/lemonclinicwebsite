@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "22200f4e-8e06-439f-96cb-ba88141042c1",
+  "asset_id": "262d80bb-e9d9-44d1-9a1d-4e000c479f9b",
   "project_id": "9c2ceba0-8818-4ded-a6d1-bf4563b632fb",
-  "url": "/__l5e/assets-v1/22200f4e-8e06-439f-96cb-ba88141042c1/laser.jpg",
-  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/22200f4e-8e06-439f-96cb-ba88141042c1/laser.jpg",
-  "original_filename": "laser.jpg",
-  "size": 1665219,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-08T15:48:59Z"
+  "url": "/__l5e/assets-v1/262d80bb-e9d9-44d1-9a1d-4e000c479f9b/laser.webp",
+  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/262d80bb-e9d9-44d1-9a1d-4e000c479f9b/laser.webp",
+  "original_filename": "laser.webp",
+  "size": 45032,
+  "content_type": "image/webp",
+  "created_at": "2026-06-08T18:13:36Z"
 }
