@@ -140,7 +140,7 @@ function LinkedCard({ card }: { card: Card }) {
 }
 
 function EndoliftCard() {
-  const ref = useReveal<HTMLDivElement>(480);
+  const ref = useReveal<HTMLAnchorElement>(480);
   return (
     <a
       href="/endolift"
