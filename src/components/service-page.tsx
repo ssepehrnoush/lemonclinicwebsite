@@ -7,7 +7,7 @@ export function LatinToken({ children }: { children: ReactNode }) {
   return <span className="font-latin">{children}</span>;
 }
 
-export function LeafIcon({ size = 18 }: { size?: number }) {
+export function LeafIcon({ size = 22 }: { size?: number }) {
   const id = `leaf-${size}`;
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" style={{ filter: "drop-shadow(0 2px 3px rgba(168,136,76,0.35))", flexShrink: 0 }}>
@@ -98,7 +98,7 @@ function FeatureItem({ children, delay, centered }: { children: ReactNode; delay
   const ref = useReveal<HTMLLIElement>(delay);
   return (
     <li ref={ref} className={`reveal flex gap-3 text-[15px] leading-[2.05] ${centered ? "justify-center text-center" : "items-start"}`}>
-      <span className={`${centered ? "mt-1" : "mt-2"}`}><LeafIcon size={18} /></span>
+      <span className={`${centered ? "mt-1" : "mt-2"}`}><LeafIcon size={22} /></span>
       <span className={centered ? "max-w-[70ch]" : "max-w-[68ch]"}>{children}</span>
     </li>
   );
@@ -124,7 +124,7 @@ export function AftercareCard({ items, note }: { items: ReactNode[]; note?: Reac
       <ul className="mt-6 space-y-4">
         {items.map((item, index) => (
           <li key={index} className="flex items-start gap-3 text-[15px] leading-[2.05]">
-            <span className="mt-2"><LeafIcon size={18} /></span>
+            <span className="mt-2"><LeafIcon size={22} /></span>
             <span>{item}</span>
           </li>
         ))}
