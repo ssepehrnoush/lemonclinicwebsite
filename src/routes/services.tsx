@@ -13,7 +13,9 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "مجموعه خدمات تخصصی جوانسازی، زیبایی و مراقبت پوست و مو با برترین تکنولوژی‌های روز دنیا در کلینیک لمون." },
       { property: "og:title", content: "منوی خدمات VIP کلینیک لمون" },
       { property: "og:description", content: "خدمات تخصصی پوست، مو و جوانسازی." },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/services" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/services" }],
   }),
   component: ServicesPage,
 });
@@ -70,7 +72,7 @@ function ServicesPage() {
               <LinkedCard key={c.title} card={c} />
             ))}
 
-            {/* Special media card — Endolift (spans 6 cols, tall) */}
+            {/* Special media card — Endolift (links to its own page) */}
             <EndoliftCard />
 
             {infoCards.map((c) => (
@@ -140,9 +142,10 @@ function LinkedCard({ card }: { card: Card }) {
 function EndoliftCard() {
   const ref = useReveal<HTMLDivElement>(480);
   return (
-    <div
+    <a
+      href="/endolift"
       ref={ref}
-      className="reveal group relative overflow-hidden rounded-[20px] md:col-span-6"
+      className="reveal group relative block overflow-hidden rounded-[20px] md:col-span-6"
       style={{
         background: "var(--surface)",
         border: "1px solid var(--line)",
@@ -170,8 +173,13 @@ function EndoliftCard() {
         </span>
       </div>
       <div className="p-[clamp(24px,2.4vw,32px)]">
-        <div className="mb-3 inline-flex items-center gap-2 text-[11px] tracking-[0.28em] text-[var(--ink-soft)]">
-          <span className="h-px w-8 bg-gold-gradient" /> ویژه
+        <div className="mb-3 flex items-center justify-between">
+          <div className="inline-flex items-center gap-2 text-[11px] tracking-[0.28em] text-[var(--ink-soft)]">
+            <span className="h-px w-8 bg-gold-gradient" /> ویژه
+          </div>
+          <span className="transition-transform duration-500 group-hover:-translate-x-2">
+            <GoldArrow size={22} />
+          </span>
         </div>
         <h3 className="font-display" style={{ fontWeight: 700, fontSize: "clamp(22px,2.4vw,30px)", lineHeight: 1.25 }}>
           اندولیفت
@@ -180,7 +188,7 @@ function EndoliftCard() {
           لیفت عمقی، جوانسازی و کلاژن‌سازی بافت صورت بدون جراحی
         </p>
       </div>
-    </div>
+    </a>
   );
 }
 
