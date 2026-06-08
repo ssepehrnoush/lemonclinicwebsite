@@ -38,8 +38,15 @@ export function GoldIcon({ children, size = 22, className }: Props) {
   );
 }
 
-export const IconCheck = (p: { size?: number }) => (
-  <GoldIcon size={p.size}><path d="M5 12.5l4 4 10-10" fill="none" stroke="url(#)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></GoldIcon>
+export const IconCheck = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" style={{ filter: "drop-shadow(0 2px 3px rgba(168,136,76,0.35))" }}>
+    <defs>
+      <linearGradient id="chk-g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#F4E692" /><stop offset="50%" stopColor="#E5CC61" /><stop offset="100%" stopColor="#A8884C" />
+      </linearGradient>
+    </defs>
+    <path d="M5 12.5l4 4 10-10" fill="none" stroke="url(#chk-g)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
 );
 export const IconPin = (p: { size?: number }) => (
   <GoldIcon size={p.size}><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.2a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4z" /></GoldIcon>
