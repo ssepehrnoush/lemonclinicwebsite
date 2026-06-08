@@ -41,14 +41,17 @@ function Index() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const heroOpacity = 1 - heroP;
+  const heroOpacity = Math.max(0, 1 - heroP * 1.1);
+  const welcomeOpacity = Math.min(1, Math.max(0, heroP * 1.2 - 0.05));
   return (
     <Layout>
-      {/* 1) HERO */}
-      <section className="relative h-screen min-h-[640px] w-full">
-        <div
-          className="fixed inset-0 w-full h-screen overflow-hidden pointer-events-none"
-          style={{ opacity: heroOpacity, zIndex: 0 }}
+      {/* 1 + 1b) HERO ↔ WELCOME crossfade scene */}
+      <div className="relative" style={{ height: "200vh" }}>
+        {/* HERO (sticky, fades out) */}
+        <section
+          className="sticky top-0 h-screen min-h-[640px] w-full overflow-hidden"
+          style={{ opacity: heroOpacity, zIndex: 1, willChange: "opacity" }}
+          aria-hidden={heroOpacity < 0.05}
         >
           <img
             src={landingAsset.url}
@@ -57,10 +60,8 @@ function Index() {
             fetchPriority="high"
             decoding="async"
           />
-          {/* bottom warm scrim */}
           <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: "linear-gradient(to top, rgba(43,38,32,0.42), rgba(43,38,32,0.22) 55%, transparent)" }} />
-          {/* overlay text — lower band, right-aligned */}
-          <div dir="rtl" className="absolute inset-x-0 bottom-0 pointer-events-auto">
+          <div dir="rtl" className="absolute inset-x-0 bottom-0 z-10">
             <div className="mx-auto max-w-[1200px] px-6 pb-24 md:pb-28">
               <div className="ms-auto max-w-[560px] text-right">
                 <h1 className="font-display text-[#FBF8F2]" style={{ fontWeight: 700, fontSize: "clamp(28px,4.4vw,46px)", lineHeight: 1.2, textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}>
@@ -77,27 +78,31 @@ function Index() {
             </div>
           </div>
           <ScrollCue />
-        </div>
-      </section>
+        </section>
 
-      {/* 1b) WELCOME LINE */}
-      <section className="relative px-6" style={{ background: "var(--canvas)" }}>
-        <div ref={welcomeRef} className="reveal relative mx-auto max-w-[760px] py-[clamp(80px,12vw,160px)] text-center">
-          <img
-            src={logoCutout.url}
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain"
-            style={{ width: "min(560px, 86%)", opacity: 0.07, filter: "drop-shadow(0 0 28px rgba(201,168,76,0.18))" }}
-          />
-          <div className="relative">
-            <div className="flex justify-center"><LemonOrnament size={56} /></div>
-            <p className="mt-8 text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
-              به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
-            </p>
+        {/* WELCOME (sticky, fades in over hero) */}
+        <section
+          className="sticky top-0 h-screen w-full flex items-center justify-center px-6"
+          style={{ opacity: welcomeOpacity, zIndex: 2, marginTop: "-100vh", willChange: "opacity", pointerEvents: welcomeOpacity > 0.5 ? "auto" : "none" }}
+          aria-hidden={welcomeOpacity < 0.05}
+        >
+          <div ref={welcomeRef} className="relative mx-auto max-w-[760px] text-center">
+            <img
+              src={logoCutout.url}
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain"
+              style={{ width: "min(560px, 86%)", opacity: 0.08, filter: "drop-shadow(0 0 28px rgba(201,168,76,0.22))" }}
+            />
+            <div className="relative">
+              <div className="flex justify-center"><LemonOrnament size={56} /></div>
+              <p className="mt-8 text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
+                به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* 2) CONTACT & LOCATION */}
       <section id="contact" className="px-6">
