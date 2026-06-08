@@ -104,20 +104,20 @@
 
 :root {
   --radius: 0.625rem;
-  --canvas: #F4EFE6;
-  --surface: #FBF8F2;
-  --ink: #2B2620;
-  --ink-soft: #6B6358;
-  --gold: #C9A96E;
+  --canvas: #0C0A07;
+  --surface: #16110B;
+  --ink: #F2E8D4;
+  --ink-soft: #A89A82;
+  --gold: #D4B574;
   --gold-deep: #A8884C;
   --sage: #8BAF9A;
   --sage-deep: #5E7E6B;
-  --line: rgba(201,169,110,0.25);
+  --line: rgba(212,181,116,0.22);
   --font-display: "Nian", "IRANFaNum", system-ui, sans-serif;
   --font-fa: "IRANFaNum", system-ui, sans-serif;
   --font-latin: "Univia Pro", "IRANFaNum", system-ui, sans-serif;
-  --background: #F4EFE6;
-  --foreground: #2B2620;
+  --background: #0C0A07;
+  --foreground: #F2E8D4;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
