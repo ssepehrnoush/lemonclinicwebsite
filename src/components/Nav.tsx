@@ -2,6 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import logoAsset from "@/assets/logo.jpg.asset.json";
 
+type MenuItem =
+  | { label: string; to: "/laser" | "/facial" | "/botox" | "/prp" | "/rejuvenation" }
+  | { label: string; href: "/hair" };
+
 const LINES = [
   { label: "لیزر (کندلا شاتی)", to: "/laser" },
   { label: "فیشال و درمال", to: "/facial" },
@@ -9,7 +13,7 @@ const LINES = [
   { label: "PRP — سلول‌های فعال", to: "/prp" },
   { label: "مو و مزوتراپی", href: "/hair" },
   { label: "جوانسازی", to: "/rejuvenation" },
-] as const;
+] satisfies readonly MenuItem[];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -66,7 +70,7 @@ export function Nav() {
               >
                 <div className="w-72 card-soft p-2">
                   {LINES.map((l, i) => (
-                    l.to ? (
+                    "to" in l ? (
                       <Link key={l.label} to={l.to} className="flex items-center justify-between rounded-md px-4 py-3 text-[14px] text-[var(--ink)] hover:bg-[var(--canvas)]" style={{ borderBottom: i < LINES.length - 1 ? "1px solid var(--line)" : "none" }}>
                         <span>{l.label}</span>
                         <span className="text-[var(--gold)]">←</span>
@@ -99,7 +103,7 @@ export function Nav() {
           <ul className="space-y-5 text-[17px]">
              <li><Link to="/">خانه</Link></li><li><Link to="/services">خدمات VIP</Link></li><li><Link to="/team">متخصصین لمون</Link></li>
             <li className="pt-4 text-[var(--ink-soft)] text-[12px] tracking-widest">لاین‌های اختصاصی</li>
-             {LINES.map((l) => <li key={l.label} className="text-[15px]">{l.to ? <Link to={l.to}>{l.label}</Link> : <a href={l.href}>{l.label}</a>}</li>)}
+             {LINES.map((l) => <li key={l.label} className="text-[15px]">{"to" in l ? <Link to={l.to}>{l.label}</Link> : <a href={l.href}>{l.label}</a>}</li>)}
           </ul>
         </aside>
       </div>
