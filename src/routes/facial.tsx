@@ -17,7 +17,9 @@ export const Route = createFileRoute("/facial")({
       { name: "description", content: "فیشال و درمال تخصصی لمون با لاین‌های درمانی، محصولات اکلادو و مراقبت‌های پس از درمان." },
       { property: "og:title", content: "لاین تخصصی فیشال و درمال" },
       { property: "og:description", content: "فیشال و درمان پوستی با رویکرد ژورنال-ادیتوریال و درمانی در لمون." },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/facial" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/facial" }],
   }),
   component: FacialPage,
 });

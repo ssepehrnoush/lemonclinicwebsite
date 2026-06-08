@@ -17,7 +17,9 @@ export const Route = createFileRoute("/prp")({
       { name: "description", content: "صفحه PRP لمون با تمرکز علمی، عدد ۹۰٪ زنده‌مانی پلاکت‌ها و مراقبت‌های پس از درمان." },
       { property: "og:title", content: "لاین مدیکال سلول‌های فعال (PRP)" },
       { property: "og:description", content: "رویکرد علمی و کلینیکال PRP در لمون با حداکثر زنده‌مانی پلاکت‌ها." },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/prp" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/prp" }],
   }),
   component: PrpPage,
 });

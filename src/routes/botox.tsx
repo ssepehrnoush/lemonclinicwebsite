@@ -17,7 +17,9 @@ export const Route = createFileRoute("/botox")({
       { name: "description", content: "بوتاکس چشم و ابرو با متدهای انحصاری لمون، خدمات CAT EYE و FOX EYE و مراقبت‌های پس از درمان." },
       { property: "og:title", content: "زیبایی چشم و ابرو با متدهای انحصاری بوتاکس لمون" },
       { property: "og:description", content: "ترکیب آرامش، تقارن و دقت در خدمات بوتاکس تخصصی لمون." },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/botox" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/botox" }],
   }),
   component: BotoxPage,
 });

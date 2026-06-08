@@ -17,7 +17,9 @@ export const Route = createFileRoute("/rejuvenation")({
       { name: "description", content: "جوانسازی پیشرفته لمون با مزوژل‌های جهانی، برند وال لوکس و مراقبت‌های پس از درمان." },
       { property: "og:title", content: "جوانسازی پیشرفته با برترین برندهای جهانی" },
       { property: "og:description", content: "Profhilo، Jalupro، Vitten، Mesolike و Fusion در تجربه جوانسازی لمون." },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/rejuvenation" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/rejuvenation" }],
   }),
   component: RejuvenationPage,
 });

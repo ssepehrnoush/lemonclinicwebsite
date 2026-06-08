@@ -13,7 +13,9 @@ export const Route = createFileRoute("/team")({
       { name: "description", content: "آشنایی با متخصصین کلینیک لمون — دکتر شادی غفوری و دکتر مصطفی هواسی، با تخصص در جوانسازی، کانتورینگ صورت و زیبایی پیشرفته." },
       { property: "og:title", content: "متخصصین کلینیک لمون" },
       { property: "og:description", content: "تیم پزشکی لمون — تخصص، تجربه و هنر زیباشناسی." },
+      { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/team" },
     ],
+    links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/team" }],
   }),
   component: TeamPage,
 });
