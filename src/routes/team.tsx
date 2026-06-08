@@ -133,7 +133,6 @@ function TeamPage() {
           <Spread
             name="دکتر شادی غفوری"
             portrait={drGhafouriAsset.url}
-            objectPosition="22% center"
             credentials={[
               <>فارغ‌التحصیل دندانپزشکی (<Latin>B.D.S</Latin>) از دانشگاه علوم پزشکی مهاراشترا هند.</>,
               <>دارای ۴ سال سابقه کار تخصصی در حوزه دنتال‌فیشیال.</>,
