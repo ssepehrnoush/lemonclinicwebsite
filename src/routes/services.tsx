@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { LemonOrnament } from "@/components/GoldIcon";
 import { GoldArrow } from "@/components/GoldArrow";
@@ -87,9 +87,9 @@ function LinkedCard({ card }: { card: Card }) {
   const ref = useReveal<HTMLAnchorElement>(card.delay);
   const span = card.span === "wide" ? "md:col-span-8" : "md:col-span-4";
   return (
-    <Link
-      to={card.to!}
-      ref={ref as any}
+    <a
+      href={card.to!}
+      ref={ref}
       className={`reveal group relative flex flex-col justify-between overflow-hidden rounded-[20px] ${span}`}
       style={{
         background: "var(--surface)",
@@ -133,7 +133,7 @@ function LinkedCard({ card }: { card: Card }) {
           <GoldArrow size={22} />
         </span>
       </div>
-    </Link>
+    </a>
   );
 }
 
