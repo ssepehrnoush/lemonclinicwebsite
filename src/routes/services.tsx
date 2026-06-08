@@ -143,18 +143,3 @@ function LinkedCard({ card }: { card: Card }) {
     </a>
   );
 }
-
-      </div>
-      <div style={{ padding: "clamp(20px,2.2vw,28px)" }}>
-        <h3 className="font-display" style={{ fontWeight: 700, fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 1.3 }}>
-          {title}
-        </h3>
-        <p className="mt-3 text-[14px] leading-7 text-[var(--ink-soft)] max-w-[44ch]">{sub}</p>
-        <div className="mt-5 flex items-center gap-2 text-[11px] tracking-[0.28em] text-[var(--ink-soft)]">
-          <LemonOrnament size={14} />
-          <span>به‌زودی جزئیات کامل</span>
-        </div>
-      </div>
-    </div>
-  );
-}
