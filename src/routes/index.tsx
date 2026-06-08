@@ -65,7 +65,7 @@ function Index() {
       {/* 1b) WELCOME LINE */}
       <section className="px-6">
         <div ref={welcomeRef} className="reveal mx-auto max-w-[760px] py-[clamp(80px,12vw,160px)] text-center">
-          <div className="flex justify-center"><LemonOrnament size={36} /></div>
+          <div className="flex justify-center"><LemonOrnament size={56} /></div>
           <p className="mt-8 text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
             به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
           </p>
@@ -95,16 +95,16 @@ function Index() {
                 در قلب تهران،<br /><span className="text-gold-gradient">منتظر شما هستیم</span>
               </h2>
               <ul className="mt-10 space-y-6 text-[15px] leading-8">
-                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconPin size={22} /></span>
+                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconPin size={30} /></span>
                   <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">آدرس کلینیک</div>تهران، اتوبان خرازی، بلوار اردستانی، مجتمع تجاری پارسه، طبقه ۸</div>
                 </li>
-                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconPhone size={22} /></span>
+                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconPhone size={30} /></span>
                   <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">تلفن تماس</div><a href="tel:02147009161" className="font-latin tracking-wide hover:text-[var(--gold-deep)]">02147009161</a></div>
                 </li>
-                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconWhatsApp size={22} /></span>
+                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconWhatsApp size={30} /></span>
                   <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">واتساپ</div><a href="https://wa.me/989004709061" className="font-latin tracking-wide hover:text-[var(--gold-deep)]">09004709061</a></div>
                 </li>
-                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconClock size={22} /></span>
+                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconClock size={30} /></span>
                   <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">ساعات حضور</div>شنبه تا پنجشنبه — ۱۰ صبح تا ۱۹ عصر</div>
                 </li>
               </ul>
@@ -134,7 +134,7 @@ function Index() {
                 </p>
                 <ul className="mt-8 space-y-3 text-[14px]">
                   {["روکش‌های استریل و یک‌بار مصرف","پروتکل‌های بهداشتی سخت‌گیرانه","یونیت‌های پزشکی استاندارد"].map((t) => (
-                    <li key={t} className="flex items-center gap-3"><IconCheck size={18} /><span>{t}</span></li>
+                    <li key={t} className="flex items-center gap-3"><IconCheck size={24} /><span>{t}</span></li>
                   ))}
                 </ul>
               </div>

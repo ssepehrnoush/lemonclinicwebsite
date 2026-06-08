@@ -20,7 +20,7 @@ export const Route = createFileRoute("/team")({
   component: TeamPage,
 });
 
-function LeafIcon({ size = 18 }: { size?: number }) {
+function LeafIcon({ size = 22 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" style={{ filter: "drop-shadow(0 2px 3px rgba(168,136,76,0.35))", flexShrink: 0 }}>
       <defs>
@@ -65,7 +65,7 @@ function Credential({ children, delay }: { children: ReactNode; delay: number })
   const ref = useReveal<HTMLLIElement>(delay);
   return (
     <li ref={ref} className="reveal flex items-start gap-3 leading-[2.15]" style={{ fontSize: "clamp(14px,1.05vw,16px)", color: "var(--ink)" }}>
-      <span className="mt-2"><LeafIcon size={18} /></span>
+      <span className="mt-2"><LeafIcon size={22} /></span>
       <span>{children}</span>
     </li>
   );
@@ -97,7 +97,7 @@ function Spread({
       <div className={`md:col-span-7 ${mirrored ? "md:order-1" : "md:order-2"}`}>
         <div ref={headRef} className="reveal">
           <div className="flex items-center gap-3 text-[11px] tracking-[0.32em] text-[var(--ink-soft)]">
-            <LemonOrnament size={18} />
+            <LemonOrnament size={26} />
             <span className="h-px w-12 bg-gold-gradient" />
             <span>پروفایل تخصصی</span>
           </div>
@@ -123,7 +123,7 @@ function TeamPage() {
       <section className="px-6 pt-[clamp(120px,16vw,180px)]">
         <div ref={headRef} className="reveal mx-auto max-w-[1200px]">
           <div className="flex items-center gap-3 text-[12px] tracking-[0.32em] text-[var(--ink-soft)]">
-            <LemonOrnament size={22} />
+            <LemonOrnament size={32} />
             <span className="h-px w-16 bg-gold-gradient" />
             <span>تیم لمون</span>
           </div>

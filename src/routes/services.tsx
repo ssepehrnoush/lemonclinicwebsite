@@ -56,7 +56,7 @@ function ServicesPage() {
       <section className="px-6 pt-[clamp(120px,16vw,180px)]">
         <div ref={headerRef} className="reveal mx-auto max-w-[1200px]">
           <div className="flex items-center gap-3 text-[12px] tracking-[0.32em] text-[var(--ink-soft)]">
-            <LemonOrnament size={22} />
+            <LemonOrnament size={32} />
             <span className="h-px w-16 bg-gold-gradient" />
             <span>منوی خدمات</span>
           </div>
