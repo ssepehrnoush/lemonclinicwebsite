@@ -72,7 +72,7 @@ function ServicesPage() {
       {/* Bento grid */}
       <section className="px-6 pb-[clamp(80px,12vw,160px)] pt-[clamp(48px,7vw,96px)]">
         <div className="mx-auto max-w-[1200px]">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
             {cards.map((c) => (
               <LinkedCard key={c.title} card={c} />
             ))}
