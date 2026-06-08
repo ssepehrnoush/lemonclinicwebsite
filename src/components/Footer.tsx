@@ -8,8 +8,8 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] px-6 py-20">
         <div className="grid gap-14 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3">
-              <img src={logoCutout.url} alt="" className="h-12 w-12 object-contain" />
+            <div className="flex items-center gap-4">
+              <img src={logoCutout.url} alt="" className="h-20 w-20 object-contain" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.55)) drop-shadow(0 0 18px rgba(201,168,76,0.28))" }} />
               <div>
                 <div className="font-latin tracking-[0.32em] text-gold-gradient">LEMON</div>
                 <div className="mt-1 text-[13px] text-[var(--ink-soft)]">کلینیک پزشکی زیبایی لمون</div>
@@ -37,10 +37,10 @@ export function Footer() {
           <div>
             <h4 className="mb-5 text-[12px] tracking-[0.3em] text-[var(--ink-soft)]">ارتباط با ما</h4>
             <ul className="space-y-4 text-[14px] leading-7">
-              <li className="flex items-start gap-3"><span className="mt-1 shrink-0"><IconPin size={18} /></span><span>تهران، اتوبان خرازی، بلوار اردستانی، مجتمع تجاری پارسه، طبقه ۸</span></li>
-              <li className="flex items-center gap-3"><IconPhone size={18} /><a href="tel:02147009161" className="font-latin tracking-wide">02147009161</a></li>
-              <li className="flex items-center gap-3"><IconWhatsApp size={18} /><a href="https://wa.me/989004709061" className="font-latin tracking-wide">09004709061</a></li>
-              <li className="flex items-center gap-3"><IconClock size={18} /><span>شنبه تا پنجشنبه — ۱۰ صبح تا ۱۹ عصر</span></li>
+              <li className="flex items-start gap-3"><span className="mt-1 shrink-0"><IconPin size={24} /></span><span>تهران، اتوبان خرازی، بلوار اردستانی، مجتمع تجاری پارسه، طبقه ۸</span></li>
+              <li className="flex items-center gap-3"><IconPhone size={24} /><a href="tel:02147009161" className="font-latin tracking-wide">02147009161</a></li>
+              <li className="flex items-center gap-3"><IconWhatsApp size={24} /><a href="https://wa.me/989004709061" className="font-latin tracking-wide">09004709061</a></li>
+              <li className="flex items-center gap-3"><IconClock size={24} /><span>شنبه تا پنجشنبه — ۱۰ صبح تا ۱۹ عصر</span></li>
             </ul>
           </div>
         </div>
