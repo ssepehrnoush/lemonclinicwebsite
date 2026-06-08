@@ -17,6 +17,8 @@ export function Framed({ ratio = "4 / 3", frameClassName = "", className = "", .
     >
       <img
         {...img}
+        loading={img.loading ?? "lazy"}
+        decoding={img.decoding ?? "async"}
         className={`h-full w-full object-cover ${className}`}
       />
       <div className="pointer-events-none absolute inset-0" style={{ boxShadow: "inset 0 0 80px rgba(244,230,146,0.06)" }} />
