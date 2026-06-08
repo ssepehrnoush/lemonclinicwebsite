@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import logoCutout from "@/assets/logo_cutout.png.asset.json";
 
 type Props = { children: ReactNode; size?: number; className?: string };
 
@@ -62,8 +63,14 @@ export const IconClock = (p: { size?: number }) => (
 );
 
 export const LemonOrnament = ({ size = 28 }: { size?: number }) => (
-  <GoldIcon size={size}>
-    <ellipse cx="12" cy="12" rx="9" ry="6" />
-    <path d="M12 6v12M3 12h18M5.5 8.5l13 7M5.5 15.5l13-7" stroke="#8a6b35" strokeWidth="0.6" fill="none" opacity="0.5" />
-  </GoldIcon>
+  <img
+    src={logoCutout.url}
+    alt=""
+    aria-hidden="true"
+    width={size}
+    height={size}
+    loading="lazy"
+    decoding="async"
+    style={{ width: size, height: size, objectFit: "contain", filter: "drop-shadow(0 2px 4px rgba(168,136,76,0.35))" }}
+  />
 );
