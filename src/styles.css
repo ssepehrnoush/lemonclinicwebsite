@@ -204,11 +204,11 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #F4E692 0%, #E5CC61 35%, #C9A96E 65%, #A8884C 100%);
+    background: linear-gradient(135deg, #D8C083 0%, #BFA063 40%, #9F8447 70%, #6F5A2E 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
   .bg-gold-gradient {
-    background: linear-gradient(135deg, #F4E692 0%, #E5CC61 35%, #C9A96E 65%, #A8884C 100%);
+    background: linear-gradient(135deg, #D8C083 0%, #BFA063 40%, #9F8447 70%, #6F5A2E 100%);
   }
   .hairline-gold { border-color: var(--line); }
   .card-soft {
