@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "62398916-5c6f-4662-91e3-5113ecedcb2d",
+  "asset_id": "33ddd9a4-070f-443a-9b71-612b109bf62c",
   "project_id": "9c2ceba0-8818-4ded-a6d1-bf4563b632fb",
-  "url": "/__l5e/assets-v1/62398916-5c6f-4662-91e3-5113ecedcb2d/dr_haavasi.jpg",
-  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/62398916-5c6f-4662-91e3-5113ecedcb2d/dr_haavasi.jpg",
-  "original_filename": "dr_haavasi.jpg",
-  "size": 1910766,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-08T15:43:36Z"
+  "url": "/__l5e/assets-v1/33ddd9a4-070f-443a-9b71-612b109bf62c/dr_haavasi.webp",
+  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/33ddd9a4-070f-443a-9b71-612b109bf62c/dr_haavasi.webp",
+  "original_filename": "dr_haavasi.webp",
+  "size": 44404,
+  "content_type": "image/webp",
+  "created_at": "2026-06-08T18:13:17Z"
 }

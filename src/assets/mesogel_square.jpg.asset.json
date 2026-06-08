@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "634c86bd-0f54-4fbe-9d4f-0b243be69a43",
+  "asset_id": "085147eb-f1d5-47ec-9f34-e83b6ca235b9",
   "project_id": "9c2ceba0-8818-4ded-a6d1-bf4563b632fb",
-  "url": "/__l5e/assets-v1/634c86bd-0f54-4fbe-9d4f-0b243be69a43/mesogel_square.jpg",
-  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/634c86bd-0f54-4fbe-9d4f-0b243be69a43/mesogel_square.jpg",
-  "original_filename": "mesogel_square.jpg",
-  "size": 676545,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-08T17:31:48Z"
+  "url": "/__l5e/assets-v1/085147eb-f1d5-47ec-9f34-e83b6ca235b9/mesogel_square.webp",
+  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/085147eb-f1d5-47ec-9f34-e83b6ca235b9/mesogel_square.webp",
+  "original_filename": "mesogel_square.webp",
+  "size": 37398,
+  "content_type": "image/webp",
+  "created_at": "2026-06-08T18:13:44Z"
 }

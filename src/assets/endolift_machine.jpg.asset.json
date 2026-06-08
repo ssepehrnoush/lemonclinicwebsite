@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "f9eee870-4c58-4b13-a2e6-91a5b2eeb7bf",
+  "asset_id": "2b22ac32-b23d-4ec2-b544-339912e318f3",
   "project_id": "9c2ceba0-8818-4ded-a6d1-bf4563b632fb",
-  "url": "/__l5e/assets-v1/f9eee870-4c58-4b13-a2e6-91a5b2eeb7bf/endolift_machine.jpg",
-  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/f9eee870-4c58-4b13-a2e6-91a5b2eeb7bf/endolift_machine.jpg",
-  "original_filename": "endolift_machine.jpg",
-  "size": 687738,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-08T15:25:33Z"
+  "url": "/__l5e/assets-v1/2b22ac32-b23d-4ec2-b544-339912e318f3/endolift_machine.webp",
+  "r2_key": "a/v1/9c2ceba0-8818-4ded-a6d1-bf4563b632fb/2b22ac32-b23d-4ec2-b544-339912e318f3/endolift_machine.webp",
+  "original_filename": "endolift_machine.webp",
+  "size": 49746,
+  "content_type": "image/webp",
+  "created_at": "2026-06-08T18:13:23Z"
 }
