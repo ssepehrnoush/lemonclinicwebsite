@@ -56,9 +56,14 @@ export function Nav() {
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 md:py-5">
           <Link to="/" className="flex items-center gap-3" aria-label="کلینیک لمون — خانه">
             {showLogo && (
-              <img src={logoCutout.url} alt="LEMON" className="h-11 w-11 object-contain" />
+              <img
+                src={logoCutout.url}
+                alt="LEMON"
+                className="h-16 w-16 md:h-[72px] md:w-[72px] object-contain"
+                style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.55)) drop-shadow(0 0 18px rgba(201,168,76,0.28))" }}
+              />
             )}
-            <span className="font-latin text-[13px] tracking-[0.32em] text-gold-gradient hidden md:inline">LEMON</span>
+            <span className="font-latin text-[15px] tracking-[0.34em] text-gold-gradient hidden md:inline">LEMON</span>
           </Link>
 
           <nav className="hidden items-center gap-10 md:flex" style={{ color: "#EDE3CF" }}>
@@ -102,10 +107,10 @@ export function Nav() {
 
       <div dir="rtl" className="fixed inset-0 z-[70] md:hidden" style={{ pointerEvents: mobile ? "auto" : "none" }} aria-hidden={!mobile}>
         <div className="absolute inset-0 bg-[rgba(43,38,32,0.4)] transition-opacity" style={{ opacity: mobile ? 1 : 0 }} onClick={() => setMobile(false)} />
-        <aside className="absolute right-0 top-0 h-full w-[82%] max-w-sm bg-[var(--canvas)] p-8 transition-transform duration-500" style={{ transform: `translateX(${mobile ? "0" : "100%"})`, borderLeft: "1px solid var(--line)" }}>
+          <aside className="absolute right-0 top-0 h-full w-[82%] max-w-sm bg-[var(--canvas)] p-8 transition-transform duration-500" style={{ transform: `translateX(${mobile ? "0" : "100%"})`, borderLeft: "1px solid var(--line)" }}>
           <div className="mb-10 flex items-center gap-3">
-            <img src={logoCutout.url} alt="" className="h-10 w-10 object-contain" />
-            <span className="font-latin tracking-[0.32em] text-gold-gradient">LEMON</span>
+            <img src={logoCutout.url} alt="" className="h-16 w-16 object-contain" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.55)) drop-shadow(0 0 18px rgba(201,168,76,0.28))" }} />
+            <span className="font-latin tracking-[0.34em] text-[15px] text-gold-gradient">LEMON</span>
           </div>
           <ul className="space-y-5 text-[17px]">
              <li><Link to="/">خانه</Link></li><li><Link to="/services">خدمات VIP</Link></li><li><Link to="/team">متخصصین لمون</Link></li>
