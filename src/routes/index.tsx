@@ -4,7 +4,7 @@ import { Framed } from "@/components/Framed";
 import { ScrollCue } from "@/components/ScrollCue";
 import { LemonOrnament, IconPin, IconPhone, IconWhatsApp, IconClock, IconCheck } from "@/components/GoldIcon";
 import { useReveal } from "@/components/useReveal";
-import landingAsset from "@/assets/reception.png.asset.json";
+import landingAsset from "@/assets/reception.jpg.asset.json";
 import mapAsset from "@/assets/clinic_map.jpg.asset.json";
 import unitAsset from "@/assets/doctor_unit.png.asset.json";
 import logoCutout from "@/assets/logo_cutout.png.asset.json";
