@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { ContainImage } from "@/components/ContainImage";
 import { Layout } from "@/components/Layout";
 import { LemonOrnament } from "@/components/GoldIcon";
 import { useReveal } from "@/components/useReveal";
@@ -41,23 +42,16 @@ function LeafIcon({ size = 22 }: { size?: number }) {
   );
 }
 
-function Portrait({ src, alt, objectPosition }: { src: string; alt: string; objectPosition: string }) {
-  const ref = useReveal<HTMLDivElement>();
+function Portrait({ src, alt }: { src: string; alt: string }) {
   return (
-    <div
-      ref={ref}
-      className="reveal relative overflow-hidden rounded-[24px]"
-      style={{
-        aspectRatio: "4 / 5",
-        border: "1px solid var(--line)",
-        boxShadow: "0 30px 80px rgba(43,38,32,0.12), inset 0 0 0 1px rgba(255,246,204,0.08)",
-        background: "var(--surface)",
-      }}
-    >
-      <img src={src} alt={alt} className="h-full w-full object-cover" style={{ objectPosition }} />
-      <div className="pointer-events-none absolute inset-0" style={{ boxShadow: "inset 0 0 100px rgba(244,230,146,0.08)" }} />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(201,169,110,0.7), transparent)" }} />
-    </div>
+    <ContainImage
+      src={src}
+      alt={alt}
+      ratio="3 / 4"
+      rounded={24}
+      loading="lazy"
+      bordered={true}
+    />
   );
 }
 
@@ -78,13 +72,11 @@ function Latin({ children }: { children: ReactNode }) {
 function Spread({
   name,
   portrait,
-  objectPosition,
   credentials,
   mirrored,
 }: {
   name: string;
   portrait: string;
-  objectPosition: string;
   credentials: ReactNode[];
   mirrored?: boolean;
 }) {
@@ -92,7 +84,7 @@ function Spread({
   return (
     <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-14">
       <div className={`md:col-span-5 ${mirrored ? "md:order-2" : "md:order-1"}`}>
-        <Portrait src={portrait} alt={name} objectPosition={objectPosition} />
+        <Portrait src={portrait} alt={name} />
       </div>
       <div className={`md:col-span-7 ${mirrored ? "md:order-1" : "md:order-2"}`}>
         <div ref={headRef} className="reveal">
@@ -141,7 +133,6 @@ function TeamPage() {
           <Spread
             name="دکتر شادی غفوری"
             portrait={drGhafouriAsset.url}
-            objectPosition="22% center"
             credentials={[
               <>فارغ‌التحصیل دندانپزشکی (<Latin>B.D.S</Latin>) از دانشگاه علوم پزشکی مهاراشترا هند.</>,
               <>دارای ۴ سال سابقه کار تخصصی در حوزه دنتال‌فیشیال.</>,
@@ -157,7 +148,6 @@ function TeamPage() {
             mirrored
             name="دکتر مصطفی هواسی"
             portrait={drHaavasiAsset.url}
-            objectPosition="80% center"
             credentials={[
               <>دانش‌آموخته دکتری حرفه‌ای پزشکی از دانشگاه علوم پزشکی ایلام.</>,
               <>بیش از ۱۲ سال سابقه مستمر در حوزه طب زیبایی و متدهای نوین جوانسازی.</>,

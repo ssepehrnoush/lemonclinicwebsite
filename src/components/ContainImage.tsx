@@ -54,8 +54,8 @@ export function ContainImage({
     aspectRatio: ratio,
     borderRadius: rounded,
     border: bordered ? "1px solid var(--line)" : "none",
-    background: "radial-gradient(120% 80% at 50% 0%, rgba(185,154,92,0.10), rgba(7,7,10,0.6) 70%)",
-    boxShadow: bordered ? "0 20px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,246,204,0.04)" : "none",
+    background: "radial-gradient(120% 80% at 50% 0%, rgba(201,168,76,0.08), rgba(4,19,15,0.7) 70%)",
+    boxShadow: bordered ? "0 20px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(242,232,212,0.04)" : "none",
     perspective: 900,
   };
 
