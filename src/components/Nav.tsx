@@ -58,7 +58,7 @@ export function Nav() {
             {showLogo && (
               <img src={logoCutout.url} alt="LEMON" className="h-11 w-11 object-contain" />
             )}
-            <span className={`font-latin text-[13px] tracking-[0.32em] ${scrolled ? "text-gold-gradient" : "text-[#FBF8F2]"} hidden md:inline`}>LEMON</span>
+            <span className="font-latin text-[13px] tracking-[0.32em] text-gold-gradient hidden md:inline">LEMON</span>
           </Link>
 
           <nav className="hidden items-center gap-10 md:flex" style={{ color: "#EDE3CF" }}>
