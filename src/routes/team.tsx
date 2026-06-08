@@ -42,23 +42,16 @@ function LeafIcon({ size = 22 }: { size?: number }) {
   );
 }
 
-function Portrait({ src, alt, objectPosition }: { src: string; alt: string; objectPosition: string }) {
-  const ref = useReveal<HTMLDivElement>();
+function Portrait({ src, alt }: { src: string; alt: string }) {
   return (
-    <div
-      ref={ref}
-      className="reveal relative overflow-hidden rounded-[24px]"
-      style={{
-        aspectRatio: "4 / 5",
-        border: "1px solid var(--line)",
-        boxShadow: "0 30px 80px rgba(43,38,32,0.12), inset 0 0 0 1px rgba(255,246,204,0.08)",
-        background: "var(--surface)",
-      }}
-    >
-      <img src={src} alt={alt} className="h-full w-full object-cover" style={{ objectPosition }} />
-      <div className="pointer-events-none absolute inset-0" style={{ boxShadow: "inset 0 0 100px rgba(244,230,146,0.08)" }} />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(201,169,110,0.7), transparent)" }} />
-    </div>
+    <ContainImage
+      src={src}
+      alt={alt}
+      ratio="3 / 4"
+      rounded={24}
+      loading="lazy"
+      bordered={true}
+    />
   );
 }
 
