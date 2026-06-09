@@ -19,6 +19,7 @@ import { Route as HairRouteImport } from './routes/hair'
 import { Route as FacialRouteImport } from './routes/facial'
 import { Route as EndoliftRouteImport } from './routes/endolift'
 import { Route as BotoxRouteImport } from './routes/botox'
+import { Route as BeforeAfterRouteImport } from './routes/before-after'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TeamRoute = TeamRouteImport.update({
@@ -71,6 +72,11 @@ const BotoxRoute = BotoxRouteImport.update({
   path: '/botox',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BeforeAfterRoute = BeforeAfterRouteImport.update({
+  id: '/before-after',
+  path: '/before-after',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -79,6 +85,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/before-after': typeof BeforeAfterRoute
   '/botox': typeof BotoxRoute
   '/endolift': typeof EndoliftRoute
   '/facial': typeof FacialRoute
@@ -92,6 +99,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/before-after': typeof BeforeAfterRoute
   '/botox': typeof BotoxRoute
   '/endolift': typeof EndoliftRoute
   '/facial': typeof FacialRoute
@@ -106,6 +114,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/before-after': typeof BeforeAfterRoute
   '/botox': typeof BotoxRoute
   '/endolift': typeof EndoliftRoute
   '/facial': typeof FacialRoute
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/before-after'
     | '/botox'
     | '/endolift'
     | '/facial'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/before-after'
     | '/botox'
     | '/endolift'
     | '/facial'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/before-after'
     | '/botox'
     | '/endolift'
     | '/facial'
@@ -161,6 +173,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BeforeAfterRoute: typeof BeforeAfterRoute
   BotoxRoute: typeof BotoxRoute
   EndoliftRoute: typeof EndoliftRoute
   FacialRoute: typeof FacialRoute
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BotoxRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/before-after': {
+      id: '/before-after'
+      path: '/before-after'
+      fullPath: '/before-after'
+      preLoaderRoute: typeof BeforeAfterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -257,6 +277,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BeforeAfterRoute: BeforeAfterRoute,
   BotoxRoute: BotoxRoute,
   EndoliftRoute: EndoliftRoute,
   FacialRoute: FacialRoute,
@@ -271,3 +292,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
