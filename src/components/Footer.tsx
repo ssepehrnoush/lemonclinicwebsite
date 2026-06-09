@@ -25,7 +25,7 @@ export function Footer() {
               <li><Link to="/team" className="hover:text-[var(--gold-deep)] transition-colors">متخصصین لمون</Link></li>
               <li><Link to="/endolift" className="hover:text-[var(--gold-deep)] transition-colors">اندولیفت</Link></li>
               <li><Link to="/laser" className="hover:text-[var(--gold-deep)] transition-colors">لیزر</Link></li>
-              <li><Link to="/facial" className="hover:text-[var(--gold-deep)] transition-colors">فیشال و درمال</Link></li>
+              <li><Link to="/facial" className="hover:text-[var(--gold-deep)] transition-colors">فیشال درمانی</Link></li>
               <li><Link to="/botox" className="hover:text-[var(--gold-deep)] transition-colors">بوتاکس</Link></li>
               <li><Link to="/prp" className="hover:text-[var(--gold-deep)] transition-colors">PRP</Link></li>
               <li><a href="/hair" className="hover:text-[var(--gold-deep)] transition-colors">مو و مزوتراپی</a></li>
