@@ -152,31 +152,39 @@ function Index() {
               <h2 className="font-display" style={{ fontWeight: 700, fontSize: "clamp(34px,4vw,52px)", lineHeight: 1.15 }}>
                 در قلب تهران،<br /><span className="text-gold-gradient">منتظر شما هستیم</span>
               </h2>
-              <ul className="mt-10 space-y-6 text-[15px] leading-8">
-                <li className="flex items-start gap-4">
+              <ul className="mt-10 space-y-4">
+                <li>
                   <GlassKey
                     external
                     href="https://maps.google.com?q=%DA%A9%D9%84%DB%8C%D9%86%DB%8C%DA%A9%20%D8%B2%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C%20%D9%84%D9%85%D9%88%D9%86,%20District%2022,%20Tehran,%20Tehran%20Province,%20Iran&ftid=0x3f8def006236f4c9:0x1df9f00288829bf2"
-                    label="مسیریابی با گوگل مپ"
-                  >
-                    <IconPin size={22} />
-                  </GlassKey>
-                  <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">آدرس کلینیک</div>تهران، اتوبان خرازی، بلوار اردستانی، مجتمع تجاری پارسه، طبقه ۸</div>
+                    label="آدرس کلینیک"
+                    value="اتوبان خرازی، بلوار اردستانی، مجتمع پارسه، طبقه ۸"
+                    icon={<IconPin size={26} />}
+                  />
                 </li>
-                <li className="flex items-start gap-4">
-                  <GlassKey href="tel:02147009161" label="تماس تلفنی">
-                    <IconPhone size={22} />
-                  </GlassKey>
-                  <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">تلفن تماس</div><a href="tel:02147009161" className="font-latin tracking-wide hover:text-[var(--gold-deep)]">02147009161</a></div>
+                <li>
+                  <GlassKey
+                    href="tel:02147009161"
+                    label="تماس تلفنی"
+                    value={<span className="font-latin tracking-wide">02147009161</span>}
+                    icon={<IconPhone size={26} />}
+                  />
                 </li>
-                <li className="flex items-start gap-4">
-                  <GlassKey external href="https://wa.me/989004709061" label="پیام در واتساپ">
-                    <IconWhatsApp size={22} />
-                  </GlassKey>
-                  <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">واتساپ</div><a href="https://wa.me/989004709061" className="font-latin tracking-wide hover:text-[var(--gold-deep)]">09004709061</a></div>
+                <li>
+                  <GlassKey
+                    external
+                    href="https://wa.me/989004709061"
+                    label="واتساپ"
+                    value={<span className="font-latin tracking-wide">09004709061</span>}
+                    icon={<IconWhatsApp size={26} />}
+                  />
                 </li>
-                <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconClock size={30} /></span>
-                  <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">ساعات حضور</div>شنبه تا پنجشنبه — ۱۰ صبح تا ۱۹ عصر</div>
+                <li>
+                  <GlassKey
+                    label="ساعات حضور"
+                    value="شنبه تا پنجشنبه — ۱۰ صبح تا ۱۹ عصر"
+                    icon={<IconClock size={26} />}
+                  />
                 </li>
               </ul>
             </div>
