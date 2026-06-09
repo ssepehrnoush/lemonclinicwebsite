@@ -11,6 +11,7 @@ type Props = {
 export function GlassKey({ href, label, value, external, icon }: Props) {
   const [spinning, setSpinning] = useState(false);
   const interactive = Boolean(href);
+  const isTel = href?.startsWith("tel:") || href?.startsWith("mailto:") || href?.startsWith("sms:");
   const handleClick = () => {
     setSpinning(false);
     requestAnimationFrame(() => setSpinning(true));
@@ -40,7 +41,7 @@ export function GlassKey({ href, label, value, external, icon }: Props) {
     <a
       href={href}
       aria-label={label}
-      target={external ? "_blank" : undefined}
+      target={external ? "_blank" : isTel ? "_top" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
       className={className}
       onClick={handleClick}
