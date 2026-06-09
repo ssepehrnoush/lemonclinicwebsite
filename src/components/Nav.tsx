@@ -8,7 +8,7 @@ type MenuItem =
 
 const LINES = [
   { label: "لیزر (کندلا شاتی)", to: "/laser" },
-  { label: "فیشال و درمال", to: "/facial" },
+  { label: "فیشال درمانی", to: "/facial" },
   { label: "بوتاکس", to: "/botox" },
   { label: "PRP — سلول‌های فعال", to: "/prp" },
   { label: "مو و مزوتراپی", href: "/hair" },

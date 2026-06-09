@@ -13,10 +13,10 @@ import facialAsset from "@/assets/facial.jpg.asset.json";
 export const Route = createFileRoute("/facial")({
   head: () => ({
     meta: [
-      { title: "لاین تخصصی فیشال و درمال | LEMON Facial" },
-      { name: "description", content: "فیشال و درمال تخصصی لمون با لاین‌های درمانی، محصولات اکلادو و مراقبت‌های پس از درمان." },
-      { property: "og:title", content: "لاین تخصصی فیشال و درمال" },
-      { property: "og:description", content: "فیشال و درمان پوستی با رویکرد ژورنال-ادیتوریال و درمانی در لمون." },
+      { title: "لاین تخصصی فیشال درمانی | LEMON Facial" },
+      { name: "description", content: "فیشال درمانی تخصصی لمون با لاین‌های درمانی، محصولات اکلادو و مراقبت‌های پس از درمان." },
+      { property: "og:title", content: "لاین تخصصی فیشال درمانی" },
+      { property: "og:description", content: "فیشال درمانی پوستی با رویکرد ژورنال-ادیتوریال و درمانی در لمون." },
       { property: "og:url", content: "https://lemonclinicwebsite.lovable.app/facial" },
     ],
     links: [{ rel: "canonical", href: "https://lemonclinicwebsite.lovable.app/facial" }],
@@ -29,9 +29,9 @@ function FacialPage() {
     <Layout>
       <ServiceHero
         label="لاین تخصصی"
-        title="لاین تخصصی فیشال و درمال"
+        title="لاین تخصصی فیشال درمانی"
         image={facialAsset.url}
-        alt="فیشال و درمال لمون"
+        alt="فیشال درمانی لمون"
         objectPosition="right center"
       />
 
