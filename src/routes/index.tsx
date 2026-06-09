@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { Framed } from "@/components/Framed";
 import { ScrollCue } from "@/components/ScrollCue";
 import { LemonOrnament, IconPin, IconPhone, IconWhatsApp, IconClock, IconCheck } from "@/components/GoldIcon";
+import { GlassKey } from "@/components/GlassKey";
 import { useReveal } from "@/components/useReveal";
 import landingAsset from "@/assets/reception.jpg.asset.json";
 import mapAsset from "@/assets/clinic_map.jpg.asset.json";
@@ -155,6 +156,23 @@ function Index() {
               <ul className="mt-10 space-y-6 text-[15px] leading-8">
                 <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconPin size={30} /></span>
                   <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">آدرس کلینیک</div>تهران، اتوبان خرازی، بلوار اردستانی، مجتمع تجاری پارسه، طبقه ۸</div>
+                </li>
+                <li>
+                  <div className="flex items-center gap-5 pt-2">
+                    <GlassKey
+                      external
+                      href="https://maps.google.com?q=%DA%A9%D9%84%DB%8C%D9%86%DB%8C%DA%A9%20%D8%B2%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C%20%D9%84%D9%85%D9%88%D9%86,%20District%2022,%20Tehran,%20Tehran%20Province,%20Iran&ftid=0x3f8def006236f4c9:0x1df9f00288829bf2"
+                      label="مسیریابی با گوگل مپ"
+                    >
+                      <IconPin size={28} />
+                    </GlassKey>
+                    <GlassKey href="tel:02147009161" label="تماس تلفنی">
+                      <IconPhone size={28} />
+                    </GlassKey>
+                    <GlassKey external href="https://wa.me/989004709061" label="پیام در واتساپ">
+                      <IconWhatsApp size={28} />
+                    </GlassKey>
+                  </div>
                 </li>
                 <li className="flex items-start gap-4"><span className="mt-1 shrink-0"><IconPhone size={30} /></span>
                   <div><div className="text-[12px] tracking-[0.25em] text-[var(--ink-soft)] mb-1">تلفن تماس</div><a href="tel:02147009161" className="font-latin tracking-wide hover:text-[var(--gold-deep)]">02147009161</a></div>
