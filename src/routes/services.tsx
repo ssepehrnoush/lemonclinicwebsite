@@ -12,6 +12,7 @@ import hairImg from "@/assets/haircare_square.jpg.asset.json";
 import rejuvImg from "@/assets/mesogel_square.jpg.asset.json";
 import endoliftImg from "@/assets/endolift_square.jpg.asset.json";
 import fillerImg from "@/assets/dr_haavasi_square.jpg.asset.json";
+import beforeAfterImg from "@/assets/ba_lipfiller.jpg.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -47,6 +48,7 @@ const cards: Card[] = [
   { title: "جوانسازی با پیشرفته‌ترین برندها", to: "/rejuvenation", span: "wide", featured: true, sub: "مزوژل‌ها و پروتکل‌های اختصاصی برند لمون", delay: 400, image: rejuvImg.url, alt: "جوانسازی پیشرفته" },
   { title: "جوانسازی و لیفت با لیزر اندو", to: "/endolift", sub: "لیفت عمقی و کلاژن‌سازی بدون جراحی", delay: 480, image: endoliftImg.url, alt: "اندولیفت" },
   { title: "تزریق انواع فیلر و ژل", to: "/services", sub: "لب، صورت، کانتورینگ و زیر چشم", delay: 560, image: fillerImg.url, alt: "فیلر و ژل" },
+  { title: "نتایج قبل و بعد درمان‌ها", to: "/before-after", sub: "گالری تصاویر واقعی از نتایج خدمات کلینیک لمون", delay: 640, image: beforeAfterImg.url, alt: "گالری قبل و بعد — کلینیک لمون" },
 ];
 
 function ServicesPage() {
