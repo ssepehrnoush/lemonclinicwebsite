@@ -106,28 +106,30 @@
 
 :root {
   --radius: 0.625rem;
-  --canvas: #04130F;
-  --surface: #082019;
-  --ink: #F2E8D4;
-  --ink-soft: #9CB0A6;
-  --gold: #C9A84C;
-  --gold-deep: #8C7138;
-  --emerald: #0D7A5F;
-  --emerald-deep: #06231C;
+  /* Deep Emerald Luxury Glass — palette imported from lemon_live.
+     Variable names preserved; "gold" tokens now carry the mint sheen. */
+  --canvas: #06201A;
+  --surface: #0E3B30;
+  --ink: #F5F1E8;
+  --ink-soft: rgba(245,241,232,0.68);
+  --gold: #C9E6D8;
+  --gold-deep: #7FB89E;
+  --emerald: #1E6B57;
+  --emerald-deep: #0F4D3F;
   --emerald-glow: #1FAE82;
-  --sage: #7FA08F;
-  --sage-deep: #547062;
-  --line: rgba(201,168,76,0.18);
+  --sage: #7FB89E;
+  --sage-deep: #165B49;
+  --line: rgba(201,230,216,0.18);
   --font-display: "IRANFaNum", "Nian", system-ui, sans-serif;
   --font-fa: "IRANFaNum", system-ui, sans-serif;
   --font-latin: "Univia Pro", "IRANFaNum", system-ui, sans-serif;
-  --background: #04130F;
-  --foreground: #F2E8D4;
+  --background: #06201A;
+  --foreground: #F5F1E8;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: #C9A84C;
+  --primary: #C9E6D8;
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -209,7 +211,7 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #F0D78C 0%, #E5C266 40%, #C9A84C 70%, #8C7138 100%);
+    background: linear-gradient(135deg, #E6F4EC 0%, #C9E6D8 45%, #7FB89E 100%);
     -webkit-background-clip: text; background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
@@ -218,12 +220,12 @@
     line-height: 1.5;
   }
   .bg-gold-gradient {
-    background: linear-gradient(135deg, #F0D78C 0%, #E5C266 40%, #C9A84C 70%, #8C7138 100%);
+    background: linear-gradient(135deg, #E6F4EC 0%, #C9E6D8 45%, #7FB89E 100%);
   }
   .bg-emerald-radial {
     background:
-      radial-gradient(60% 50% at 20% 10%, rgba(31,174,130,0.12), transparent 60%),
-      radial-gradient(50% 40% at 90% 90%, rgba(201,168,76,0.08), transparent 60%),
+      radial-gradient(ellipse at top right, rgba(30,107,87,0.35), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(15,77,63,0.45), transparent 65%),
       var(--canvas);
   }
   .hairline-gold { border-color: var(--line); }
