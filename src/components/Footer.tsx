@@ -1,7 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import logoCutout from "@/assets/logo_cutout.png.asset.json";
-import { IconPin, IconPhone, IconWhatsApp, IconClock } from "./GoldIcon";
-import { GlassKey } from "./GlassKey";
 
 export function Footer() {
   return (
