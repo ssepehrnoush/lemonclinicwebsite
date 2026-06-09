@@ -337,7 +337,7 @@
   .glass-key__label {
     font-size: 15px;
     font-weight: 700;
-    background: linear-gradient(135deg, #F0D78C 0%, #E5C266 40%, #C9A84C 70%, #8C7138 100%);
+    background: linear-gradient(135deg, #E6F4EC 0%, #C9E6D8 45%, #7FB89E 100%);
     -webkit-background-clip: text; background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
