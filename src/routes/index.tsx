@@ -47,7 +47,7 @@ function Index() {
   const heroScale = 1 + heroP * 0.08;
   const heroBlur = heroP * 6;
   return (
-    <Layout showFooter={false}>
+    <Layout footerShowContact={false}>
       {/* 1 + 1b) HERO ↔ WELCOME crossfade scene */}
       <div className="relative" style={{ height: "500vh" }}>
         {/* HERO (sticky, fades out) */}

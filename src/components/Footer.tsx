@@ -3,11 +3,11 @@ import logoCutout from "@/assets/logo_cutout.png.asset.json";
 import { GlassKey } from "./GlassKey";
 import { IconPin, IconPhone, IconWhatsApp, IconClock } from "./GoldIcon";
 
-export function Footer() {
+export function Footer({ showContact = true }: { showContact?: boolean } = {}) {
   return (
     <footer dir="rtl" className="mt-32" style={{ borderTop: "1px solid var(--line)" }}>
       <div className="mx-auto max-w-[1200px] px-6 py-20">
-        <div className="grid gap-14 md:grid-cols-3">
+        <div className={`grid gap-14 ${showContact ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           <div>
             <div className="flex items-center gap-4">
               <img src={logoCutout.url} alt="" className="h-20 w-20 object-contain" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.55)) drop-shadow(0 0 18px rgba(201,168,76,0.28))" }} />
@@ -35,7 +35,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          {showContact && <div>
             <h4 className="mb-5 text-[12px] tracking-[0.3em] text-[var(--ink-soft)]">ارتباط با ما</h4>
             <ul className="space-y-3">
               <li>
@@ -72,7 +72,7 @@ export function Footer() {
                 />
               </li>
             </ul>
-          </div>
+          </div>}
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 pt-8 text-[12px] text-[var(--ink-soft)] md:flex-row" style={{ borderTop: "1px solid var(--line)" }}>
