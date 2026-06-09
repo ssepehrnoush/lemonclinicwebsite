@@ -121,9 +121,8 @@ function Index() {
           aria-hidden={welcomeOpacity < 0.05}
         >
           <div ref={welcomeRef} className="relative mx-auto max-w-[760px] text-center">
-            <LemonOrnament aria-hidden="true" />
             <div className="relative">
-              <p className="text-[var(--ink-soft)]" style={{ fontSize: "clamp(18px,1.6vw,22px)", lineHeight: 2 }}>
+              <p className="text-[var(--ink-soft)]" style={{ fontSize: "clamp(22px,2.2vw,30px)", lineHeight: 2 }}>
                 به <span className="text-gold-gradient font-bold">لمون</span> خوش آمدید. جایی که آرامش، هنر پزشکان متخصص و بالاترین استانداردهای مراقبتی در هم می‌آمیزند.
               </p>
             </div>
