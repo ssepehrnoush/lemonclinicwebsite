@@ -377,7 +377,7 @@
       0 0 34px rgba(244,210,120,0.35);
   }
   .glass-key:active { transform: scale(0.96); }
-  .glass-key.is-spinning { animation: glassKeySpin 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
+  .glass-key.is-spinning { animation: glassKeySpin 2.4s cubic-bezier(0.22, 1, 0.36, 1); }
   @keyframes glassKeySpin {
     0%   { transform: rotateY(0deg)   scale(1); }
     50%  { transform: rotateY(180deg) scale(1.08); }
