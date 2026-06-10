@@ -76,7 +76,7 @@ export function Footer({ showContact = true }: { showContact?: boolean } = {}) {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 pt-8 text-[12px] text-[var(--ink-soft)] md:flex-row" style={{ borderTop: "1px solid var(--line)" }}>
-          <span>© {new Date().getFullYear()} <span className="font-latin">LEMON</span> Aesthetic Center</span>
+          <span>© 2025 <span className="font-latin">LEMON</span> Aesthetic Center · از پارسال فعالیم</span>
           <span>طراحی با وسواس، در سکوت طلایی.</span>
         </div>
       </div>
