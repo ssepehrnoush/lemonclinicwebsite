@@ -135,6 +135,7 @@ function Index() {
       {/* AI FACE ANALYSIS CTA */}
       <section className="px-6">
         <a
+          ref={aiRef}
           href="https://ai.lemonclinic.org"
           target="_blank"
           rel="noopener noreferrer"
