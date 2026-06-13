@@ -8,6 +8,7 @@ import { useReveal } from "@/components/useReveal";
 import landingAsset from "@/assets/reception.jpg.asset.json";
 import mapAsset from "@/assets/clinic_map.jpg.asset.json";
 import unitAsset from "@/assets/doctor_unit.png.asset.json";
+import logoCutout from "@/assets/logo_cutout.png.asset.json";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
