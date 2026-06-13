@@ -131,6 +131,76 @@ function Index() {
         </section>
       </div>
 
+      {/* AI FACE ANALYSIS CTA */}
+      <section className="px-6">
+        <a
+          href="https://ai.lemonclinic.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="reveal relative mx-auto block max-w-[1200px] overflow-hidden rounded-[28px] transition-all duration-500 hover:scale-[1.01]"
+          style={{
+            marginBlock: "clamp(60px, 10vw, 120px)",
+            background:
+              "linear-gradient(135deg, rgba(14,59,48,0.92), rgba(6,32,26,0.97))",
+            border: "1px solid rgba(201,230,216,0.28)",
+            boxShadow:
+              "0 20px 60px rgba(0,0,0,0.4), inset 0 0 100px rgba(31,174,130,0.10)",
+          }}
+        >
+          <div
+            className="pointer-events-none absolute inset-0 ai-banner-shine"
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col items-center px-6 py-[clamp(56px,8vw,100px)] text-center md:px-14">
+            {/* Top glow line */}
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-px"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent, rgba(201,169,110,0.8), transparent)",
+              }}
+            />
+
+            {/* Logo */}
+            <img
+              src={logoCutout.url}
+              alt="LEMON AI"
+              className="ai-logo-glow mb-8 h-28 w-28 object-contain md:h-36 md:w-36"
+            />
+
+            {/* Title */}
+            <h2
+              className="font-display"
+              style={{
+                fontWeight: 700,
+                fontSize: "clamp(26px, 3.8vw, 48px)",
+                lineHeight: 1.15,
+              }}
+            >
+              <span className="text-gold-gradient">تحلیل صورت</span> با هوش
+              مصنوعی لمون
+            </h2>
+
+            <p className="mt-5 max-w-[52ch] text-[15px] leading-8 text-[var(--ink-soft)]">
+              با هوش مصنوعی اختصاصی لمون، زیبایی خود را از زاویه‌ای نو ببینید.
+              تحلیل دقیق، پیشنهادات شخصی‌سازی‌شده و مسیر بهینه برای
+              جوانسازی.
+            </p>
+
+            <div
+              className="mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-[15px] transition-all duration-500"
+              style={{
+                background: "rgba(31,174,130,0.15)",
+                border: "1px solid rgba(201,230,216,0.35)",
+              }}
+            >
+              <span className="text-gold-gradient">شروع تحلیل رایگان</span>
+              <span className="text-[var(--gold)]">←</span>
+            </div>
+          </div>
+        </a>
+      </section>
+
       {/* 2) CONTACT & LOCATION */}
       <section id="contact" className="px-6">
         <div className="mx-auto max-w-[1200px] py-[clamp(60px,9vw,120px)]">
