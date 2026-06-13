@@ -32,6 +32,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   const welcomeRef = useReveal<HTMLDivElement>();
   const hygieneRef = useReveal<HTMLDivElement>();
+  const aiRef = useReveal<HTMLAnchorElement>();
   const [heroP, setHeroP] = useState(0);
   useEffect(() => {
     const onScroll = () => {
