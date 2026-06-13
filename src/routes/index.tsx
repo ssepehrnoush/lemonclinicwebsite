@@ -136,7 +136,7 @@ function Index() {
       <section className="px-6">
         <a
           ref={aiRef}
-          href="https://ai.lemonclinic.org"
+          href="https://www.ai.lemonclinic.org/"
           target="_blank"
           rel="noopener noreferrer"
           className="reveal relative mx-auto block max-w-[1200px] overflow-hidden rounded-[28px] transition-all duration-500 hover:scale-[1.01]"
