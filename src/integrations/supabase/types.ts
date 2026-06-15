@@ -14,7 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      face_analyses: {
+        Row: {
+          created_at: string
+          headline: string | null
+          id: string
+          ip: string | null
+          original_image_url: string
+          perceived_age: number | null
+          result: Json
+          summary: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          headline?: string | null
+          id?: string
+          ip?: string | null
+          original_image_url: string
+          perceived_age?: number | null
+          result: Json
+          summary?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          headline?: string | null
+          id?: string
+          ip?: string | null
+          original_image_url?: string
+          perceived_age?: number | null
+          result?: Json
+          summary?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      face_simulations: {
+        Row: {
+          after_image_url: string
+          analysis_id: string | null
+          before_image_url: string
+          created_at: string
+          id: string
+          treatment_keys: string[]
+          treatment_names: string[]
+        }
+        Insert: {
+          after_image_url: string
+          analysis_id?: string | null
+          before_image_url: string
+          created_at?: string
+          id?: string
+          treatment_keys: string[]
+          treatment_names: string[]
+        }
+        Update: {
+          after_image_url?: string
+          analysis_id?: string | null
+          before_image_url?: string
+          created_at?: string
+          id?: string
+          treatment_keys?: string[]
+          treatment_names?: string[]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "face_simulations_analysis_id_fkey"
+            columns: ["analysis_id"]
+            isOneToOne: false
+            referencedRelation: "face_analyses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
