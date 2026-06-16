@@ -1,5 +1,6 @@
 @import "tailwindcss" source(none);
 @source "../src";
+@import "./styles-ai.css";
 
 /* Self-hosted brand fonts (CDN-served, browser-fetched at runtime) */
 @font-face {
