@@ -73,7 +73,7 @@ function AnalyzingPage() {
         const elapsed = Date.now() - startTime;
         const wait = Math.max(0, 5800 - elapsed);
         setTimeout(() => {
-          saveResult(result);
+          saveResult(result, (result as { analysisId?: string }).analysisId);
           // Clear seen-flag so popup re-shows for new analysis
           sessionStorage.removeItem("aineh:beautyScoreSeen");
           sessionStorage.removeItem("aineh:beautyScore");
