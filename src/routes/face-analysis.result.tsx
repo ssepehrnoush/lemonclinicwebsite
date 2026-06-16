@@ -16,7 +16,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { getCapture, getResult, clearAineh } from "@/lib/aineh-store";
+import { getCapture, getResult, getAnalysisId, clearAineh } from "@/lib/aineh-store";
 import { simulateTreatment, type AnalysisResult, type TreatmentKey } from "@/lib/analyze.functions";
 import { getPromptForSelection } from "@/data/treatment-prompts.js";
 import { BeautyScorePopup, computeBeautyScore } from "@/components/ai/BeautyScorePopup";
@@ -567,7 +567,15 @@ function SequentialSimulationModal({
 
     (async () => {
       try {
-        const r = await run({ data: { imageBase64: beforeImg, prompt } });
+        const r = await run({
+          data: {
+            imageBase64: beforeImg,
+            prompt,
+            analysisId: getAnalysisId() ?? undefined,
+            treatmentKeys: treatmentKeys as string[],
+            treatmentNames,
+          },
+        });
         if (!cancelled) {
           setAfter(r.imageBase64);
           setProgress({ step: 1, total: 1 });
