@@ -20,7 +20,11 @@ import { Route as FacialRouteImport } from './routes/facial'
 import { Route as EndoliftRouteImport } from './routes/endolift'
 import { Route as BotoxRouteImport } from './routes/botox'
 import { Route as BeforeAfterRouteImport } from './routes/before-after'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FaceAnalysisIndexRouteImport } from './routes/face-analysis.index'
+import { Route as FaceAnalysisResultRouteImport } from './routes/face-analysis.result'
+import { Route as FaceAnalysisAnalyzingRouteImport } from './routes/face-analysis.analyzing'
 
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
@@ -77,14 +81,35 @@ const BeforeAfterRoute = BeforeAfterRouteImport.update({
   path: '/before-after',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaceAnalysisIndexRoute = FaceAnalysisIndexRouteImport.update({
+  id: '/face-analysis/',
+  path: '/face-analysis/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaceAnalysisResultRoute = FaceAnalysisResultRouteImport.update({
+  id: '/face-analysis/result',
+  path: '/face-analysis/result',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaceAnalysisAnalyzingRoute = FaceAnalysisAnalyzingRouteImport.update({
+  id: '/face-analysis/analyzing',
+  path: '/face-analysis/analyzing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/before-after': typeof BeforeAfterRoute
   '/botox': typeof BotoxRoute
   '/endolift': typeof EndoliftRoute
@@ -96,9 +121,13 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
+  '/face-analysis/analyzing': typeof FaceAnalysisAnalyzingRoute
+  '/face-analysis/result': typeof FaceAnalysisResultRoute
+  '/face-analysis/': typeof FaceAnalysisIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/before-after': typeof BeforeAfterRoute
   '/botox': typeof BotoxRoute
   '/endolift': typeof EndoliftRoute
@@ -110,10 +139,14 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
+  '/face-analysis/analyzing': typeof FaceAnalysisAnalyzingRoute
+  '/face-analysis/result': typeof FaceAnalysisResultRoute
+  '/face-analysis': typeof FaceAnalysisIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/before-after': typeof BeforeAfterRoute
   '/botox': typeof BotoxRoute
   '/endolift': typeof EndoliftRoute
@@ -125,11 +158,15 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
+  '/face-analysis/analyzing': typeof FaceAnalysisAnalyzingRoute
+  '/face-analysis/result': typeof FaceAnalysisResultRoute
+  '/face-analysis/': typeof FaceAnalysisIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/before-after'
     | '/botox'
     | '/endolift'
@@ -141,9 +178,13 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/team'
+    | '/face-analysis/analyzing'
+    | '/face-analysis/result'
+    | '/face-analysis/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/before-after'
     | '/botox'
     | '/endolift'
@@ -155,9 +196,13 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/team'
+    | '/face-analysis/analyzing'
+    | '/face-analysis/result'
+    | '/face-analysis'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/before-after'
     | '/botox'
     | '/endolift'
@@ -169,10 +214,14 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/team'
+    | '/face-analysis/analyzing'
+    | '/face-analysis/result'
+    | '/face-analysis/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   BeforeAfterRoute: typeof BeforeAfterRoute
   BotoxRoute: typeof BotoxRoute
   EndoliftRoute: typeof EndoliftRoute
@@ -184,6 +233,9 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
+  FaceAnalysisAnalyzingRoute: typeof FaceAnalysisAnalyzingRoute
+  FaceAnalysisResultRoute: typeof FaceAnalysisResultRoute
+  FaceAnalysisIndexRoute: typeof FaceAnalysisIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -265,6 +317,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BeforeAfterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -272,11 +331,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/face-analysis/': {
+      id: '/face-analysis/'
+      path: '/face-analysis'
+      fullPath: '/face-analysis/'
+      preLoaderRoute: typeof FaceAnalysisIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/face-analysis/result': {
+      id: '/face-analysis/result'
+      path: '/face-analysis/result'
+      fullPath: '/face-analysis/result'
+      preLoaderRoute: typeof FaceAnalysisResultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/face-analysis/analyzing': {
+      id: '/face-analysis/analyzing'
+      path: '/face-analysis/analyzing'
+      fullPath: '/face-analysis/analyzing'
+      preLoaderRoute: typeof FaceAnalysisAnalyzingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   BeforeAfterRoute: BeforeAfterRoute,
   BotoxRoute: BotoxRoute,
   EndoliftRoute: EndoliftRoute,
@@ -288,6 +369,9 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
+  FaceAnalysisAnalyzingRoute: FaceAnalysisAnalyzingRoute,
+  FaceAnalysisResultRoute: FaceAnalysisResultRoute,
+  FaceAnalysisIndexRoute: FaceAnalysisIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
