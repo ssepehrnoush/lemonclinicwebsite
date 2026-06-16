@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Framed } from "@/components/Framed";
 import { ScrollCue } from "@/components/ScrollCue";
@@ -134,11 +134,9 @@ function Index() {
 
       {/* AI FACE ANALYSIS CTA */}
       <section className="px-6">
-        <a
-          ref={aiRef}
-          href="https://www.ai.lemonclinic.org/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          ref={aiRef as any}
+          to="/face-analysis"
           className="reveal relative mx-auto block max-w-[1200px] overflow-hidden rounded-[28px] transition-all duration-500 hover:scale-[1.01]"
           style={{
             marginBlock: "clamp(60px, 10vw, 120px)",
@@ -200,7 +198,7 @@ function Index() {
               <span className="text-[var(--gold)]">←</span>
             </div>
           </div>
-        </a>
+        </Link>
       </section>
 
       {/* 2) CONTACT & LOCATION */}
