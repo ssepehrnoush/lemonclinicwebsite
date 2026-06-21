@@ -141,26 +141,26 @@
   /* Apple Vision–style transparent glass surfaces */
   .glass {
     background:
-      linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,248,240,0.30) 45%, rgba(171,188,160,0.25) 100%),
-      rgba(255,248,240,0.70);
+      linear-gradient(135deg, rgba(255,255,255,0.55), rgba(237,228,211,0.30) 45%, rgba(148,168,138,0.25) 100%),
+      rgba(237,228,211,0.70);
     backdrop-filter: blur(22px) saturate(150%);
-    border: 1px solid rgba(44,62,51,0.14);
+    border: 1px solid rgba(30,43,34,0.14);
     box-shadow:
       inset 0 1px 0 rgba(255,255,255,0.65),
-      0 10px 30px -16px rgba(44,62,51,0.25);
+      0 10px 30px -16px rgba(30,43,34,0.25);
     color: var(--foreground);
   }
   .glass-dark {
-    background: linear-gradient(135deg, #D9B97A, #C5A059 60%, #A8853E);
-    color: #FFF8F0;
-    border: 1px solid rgba(168,133,62,0.55);
+    background: linear-gradient(135deg, #D4B87A, #B8944A 60%, #967830);
+    color: #FAF5EC;
+    border: 1px solid rgba(150,120,48,0.55);
     box-shadow:
       inset 0 1px 0 rgba(255,255,255,0.35),
-      0 14px 40px -16px rgba(44,62,51,0.35);
+      0 14px 40px -16px rgba(30,43,34,0.35);
   }
   .glass-chip {
-    background: rgba(171,188,160,0.18);
-    border: 1px solid rgba(171,188,160,0.45);
+    background: rgba(148,168,138,0.18);
+    border: 1px solid rgba(148,168,138,0.45);
     color: var(--foreground);
   }
 
