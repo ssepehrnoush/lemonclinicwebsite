@@ -129,8 +129,8 @@
   .shadow-soft { box-shadow: 0 10px 30px -16px var(--ink); }
   .shadow-mirror { box-shadow: 0 40px 90px -32px var(--ink), inset 0 0 0 1px color-mix(in oklab, var(--gold) 25%, transparent); }
   .shadow-gold { box-shadow: 0 18px 44px -20px color-mix(in oklab, var(--gold) 45%, transparent); }
-  .bg-gradient-gold { background: linear-gradient(135deg, #D9B97A, #C5A059 55%, #A8853E); }
-  .bg-gradient-ink { background: linear-gradient(160deg, #ABBCA0, #6C8260); }
+  .bg-gradient-gold { background: linear-gradient(135deg, #D4B87A, #B8944A 55%, #967830); }
+  .bg-gradient-ink { background: linear-gradient(160deg, #94A88A, #5E7356); }
   .bg-page { background-color: var(--background); }
   .text-gold { color: var(--gold); }
   .text-gold-deep { color: var(--gold-deep); }
