@@ -107,30 +107,30 @@
 
 :root {
   --radius: 0.625rem;
-  /* Zen Matcha palette — creamy nude canvas, deep moss ink, matcha sage, muted gold accents. */
-  --canvas: #FFF8F0;
-  --surface: #FBF1DE;
-  --ink: #2C3E33;
-  --ink-soft: rgba(44,62,51,0.68);
-  --gold: #C5A059;
-  --gold-deep: #A8853E;
-  --emerald: #ABBCA0;
-  --emerald-deep: #8FA585;
-  --emerald-glow: #C5A059;
-  --sage: #ABBCA0;
-  --sage-deep: #6C8260;
-  --line: rgba(44,62,51,0.14);
+  /* Warm Walnut palette — inspired by clinic interiors: warm sand, walnut wood, deep moss, antique gold. */
+  --canvas: #EDE4D3;
+  --surface: #E2D5C0;
+  --ink: #1E2B22;
+  --ink-soft: rgba(30,43,34,0.72);
+  --gold: #B8944A;
+  --gold-deep: #967830;
+  --emerald: #94A88A;
+  --emerald-deep: #7A8E70;
+  --emerald-glow: #B8944A;
+  --sage: #94A88A;
+  --sage-deep: #5E7356;
+  --line: rgba(30,43,34,0.14);
   --font-display: "Playfair Display", "IRANFaNum", Georgia, serif;
   --font-fa: "Inter", "IRANFaNum", system-ui, sans-serif;
   --font-latin: "Playfair Display", "Inter", system-ui, serif;
-  --background: #FFF8F0;
-  --foreground: #2C3E33;
+  --background: #EDE4D3;
+  --foreground: #1E2B22;
   --card: oklch(1 0 0);
-  --card-foreground: #2C3E33;
+  --card-foreground: #1E2B22;
   --popover: oklch(1 0 0);
-  --popover-foreground: #2C3E33;
-  --primary: #C5A059;
-  --primary-foreground: #FFF8F0;
+  --popover-foreground: #1E2B22;
+  --primary: #B8944A;
+  --primary-foreground: #FAF5EC;
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -211,7 +211,7 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #D9B97A 0%, #C5A059 45%, #A8853E 100%);
+    background: linear-gradient(135deg, #D4B87A 0%, #B8944A 45%, #967830 100%);
     -webkit-background-clip: text; background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
@@ -220,12 +220,12 @@
     line-height: 1.5;
   }
   .bg-gold-gradient {
-    background: linear-gradient(135deg, #D9B97A 0%, #C5A059 45%, #A8853E 100%);
+    background: linear-gradient(135deg, #D4B87A 0%, #B8944A 45%, #967830 100%);
   }
   .bg-emerald-radial {
     background:
-      radial-gradient(ellipse at top right, rgba(171,188,160,0.32), transparent 60%),
-      radial-gradient(ellipse at bottom left, rgba(197,160,89,0.18), transparent 65%),
+      radial-gradient(ellipse at top right, rgba(148,168,138,0.32), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(184,148,74,0.18), transparent 65%),
       var(--canvas);
   }
   .hairline-gold { border-color: var(--line); }

@@ -54,10 +54,10 @@ export function Nav() {
         dir="rtl"
         className="fixed inset-x-0 top-0 z-50 transition-colors duration-500"
         style={{
-          backgroundColor: scrolled ? "rgba(255,248,240,0.78)" : isHome ? "transparent" : "rgba(255,248,240,0.92)",
+          backgroundColor: scrolled ? "rgba(237,228,211,0.78)" : isHome ? "transparent" : "rgba(237,228,211,0.92)",
           backdropFilter: scrolled ? "blur(16px) saturate(150%)" : undefined,
           WebkitBackdropFilter: scrolled ? "blur(16px) saturate(150%)" : undefined,
-          borderBottom: scrolled || !isHome ? "1px solid rgba(44,62,51,0.10)" : "1px solid transparent",
+          borderBottom: scrolled || !isHome ? "1px solid rgba(30,43,34,0.10)" : "1px solid transparent",
         }}
       >
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 md:py-5">
