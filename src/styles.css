@@ -107,31 +107,30 @@
 
 :root {
   --radius: 0.625rem;
-  /* Deep Emerald Luxury Glass — palette imported from lemon_live.
-     Variable names preserved; "gold" tokens now carry the mint sheen. */
-  --canvas: #06201A;
-  --surface: #0E3B30;
-  --ink: #F5F1E8;
-  --ink-soft: rgba(245,241,232,0.68);
-  --gold: #C9E6D8;
-  --gold-deep: #7FB89E;
-  --emerald: #1E6B57;
-  --emerald-deep: #0F4D3F;
-  --emerald-glow: #1FAE82;
-  --sage: #7FB89E;
-  --sage-deep: #165B49;
-  --line: rgba(201,230,216,0.18);
-  --font-display: "IRANFaNum", "Nian", system-ui, sans-serif;
-  --font-fa: "IRANFaNum", system-ui, sans-serif;
-  --font-latin: "Univia Pro", "IRANFaNum", system-ui, sans-serif;
-  --background: #06201A;
-  --foreground: #F5F1E8;
+  /* Zen Matcha palette — creamy nude canvas, deep moss ink, matcha sage, muted gold accents. */
+  --canvas: #FFF8F0;
+  --surface: #FBF1DE;
+  --ink: #2C3E33;
+  --ink-soft: rgba(44,62,51,0.68);
+  --gold: #C5A059;
+  --gold-deep: #A8853E;
+  --emerald: #ABBCA0;
+  --emerald-deep: #8FA585;
+  --emerald-glow: #C5A059;
+  --sage: #ABBCA0;
+  --sage-deep: #6C8260;
+  --line: rgba(44,62,51,0.14);
+  --font-display: "Playfair Display", "IRANFaNum", Georgia, serif;
+  --font-fa: "Inter", "IRANFaNum", system-ui, sans-serif;
+  --font-latin: "Playfair Display", "Inter", system-ui, serif;
+  --background: #FFF8F0;
+  --foreground: #2C3E33;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: #2C3E33;
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: #C9E6D8;
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --popover-foreground: #2C3E33;
+  --primary: #C5A059;
+  --primary-foreground: #FFF8F0;
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -212,7 +211,7 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #E6F4EC 0%, #C9E6D8 45%, #7FB89E 100%);
+    background: linear-gradient(135deg, #D9B97A 0%, #C5A059 45%, #A8853E 100%);
     -webkit-background-clip: text; background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
@@ -221,12 +220,12 @@
     line-height: 1.5;
   }
   .bg-gold-gradient {
-    background: linear-gradient(135deg, #E6F4EC 0%, #C9E6D8 45%, #7FB89E 100%);
+    background: linear-gradient(135deg, #D9B97A 0%, #C5A059 45%, #A8853E 100%);
   }
   .bg-emerald-radial {
     background:
-      radial-gradient(ellipse at top right, rgba(30,107,87,0.35), transparent 60%),
-      radial-gradient(ellipse at bottom left, rgba(15,77,63,0.45), transparent 65%),
+      radial-gradient(ellipse at top right, rgba(171,188,160,0.32), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(197,160,89,0.18), transparent 65%),
       var(--canvas);
   }
   .hairline-gold { border-color: var(--line); }

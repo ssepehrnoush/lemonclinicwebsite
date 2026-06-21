@@ -141,10 +141,10 @@ function Index() {
           style={{
             marginBlock: "clamp(60px, 10vw, 120px)",
             background:
-              "linear-gradient(135deg, rgba(14,59,48,0.92), rgba(6,32,26,0.97))",
-            border: "1px solid rgba(201,230,216,0.28)",
+              "linear-gradient(135deg, rgba(171,188,160,0.55), rgba(251,241,222,0.95))",
+            border: "1px solid rgba(197,160,89,0.35)",
             boxShadow:
-              "0 20px 60px rgba(0,0,0,0.4), inset 0 0 100px rgba(31,174,130,0.10)",
+              "0 20px 60px rgba(44,62,51,0.18), inset 0 0 100px rgba(197,160,89,0.08)",
           }}
         >
           <div
@@ -190,8 +190,8 @@ function Index() {
             <div
               className="mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-[15px] transition-all duration-500"
               style={{
-                background: "rgba(31,174,130,0.15)",
-                border: "1px solid rgba(201,230,216,0.35)",
+                background: "rgba(197,160,89,0.18)",
+                border: "1px solid rgba(197,160,89,0.45)",
               }}
             >
               <span className="text-gold-gradient">شروع تحلیل رایگان</span>
