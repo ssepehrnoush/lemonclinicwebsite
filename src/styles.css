@@ -224,8 +224,8 @@
   }
   .bg-emerald-radial {
     background:
-      radial-gradient(ellipse at top right, rgba(171,188,160,0.32), transparent 60%),
-      radial-gradient(ellipse at bottom left, rgba(197,160,89,0.18), transparent 65%),
+      radial-gradient(ellipse at top right, rgba(148,168,138,0.32), transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(184,148,74,0.18), transparent 65%),
       var(--canvas);
   }
   .hairline-gold { border-color: var(--line); }
