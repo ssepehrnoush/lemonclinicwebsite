@@ -141,10 +141,10 @@ function Index() {
           style={{
             marginBlock: "clamp(60px, 10vw, 120px)",
             background:
-              "linear-gradient(135deg, rgba(171,188,160,0.55), rgba(251,241,222,0.95))",
-            border: "1px solid rgba(197,160,89,0.35)",
+              "linear-gradient(135deg, rgba(148,168,138,0.55), rgba(226,213,192,0.95))",
+            border: "1px solid rgba(184,148,74,0.35)",
             boxShadow:
-              "0 20px 60px rgba(44,62,51,0.18), inset 0 0 100px rgba(197,160,89,0.08)",
+              "0 20px 60px rgba(30,43,34,0.18), inset 0 0 100px rgba(184,148,74,0.08)",
           }}
         >
           <div
