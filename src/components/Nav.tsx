@@ -54,10 +54,10 @@ export function Nav() {
         dir="rtl"
         className="fixed inset-x-0 top-0 z-50 transition-colors duration-500"
         style={{
-          backgroundColor: scrolled ? "rgba(4,19,15,0.55)" : "transparent",
+          backgroundColor: scrolled ? "rgba(255,248,240,0.78)" : isHome ? "transparent" : "rgba(255,248,240,0.92)",
           backdropFilter: scrolled ? "blur(16px) saturate(150%)" : undefined,
           WebkitBackdropFilter: scrolled ? "blur(16px) saturate(150%)" : undefined,
-          borderBottom: scrolled ? "1px solid rgba(201,168,76,0.16)" : "1px solid transparent",
+          borderBottom: scrolled || !isHome ? "1px solid rgba(44,62,51,0.10)" : "1px solid transparent",
         }}
       >
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 md:py-5">
@@ -73,7 +73,7 @@ export function Nav() {
             <span className="font-latin text-[15px] tracking-[0.34em] text-gold-gradient hidden md:inline">LEMON</span>
           </Link>
 
-          <nav className="hidden items-center gap-10 md:flex" style={{ color: "#EDE3CF" }}>
+          <nav className="hidden items-center gap-10 md:flex" style={{ color: isHome && !scrolled ? "#FBF8F2" : "var(--ink)" }}>
              <NavLink to="/">خانه</NavLink>
              <NavLink to="/services">خدمات VIP</NavLink>
              <NavLink to="/team">متخصصین لمون</NavLink>
@@ -106,7 +106,7 @@ export function Nav() {
             </div>
           </nav>
 
-          <button className="md:hidden p-2" style={{ color: "#EDE3CF" }} onClick={() => setMobile(true)} aria-label="منو">
+          <button className="md:hidden p-2" style={{ color: isHome && !scrolled ? "#FBF8F2" : "var(--ink)" }} onClick={() => setMobile(true)} aria-label="منو">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
           </button>
         </div>
