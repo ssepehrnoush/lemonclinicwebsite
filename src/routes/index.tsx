@@ -190,8 +190,8 @@ function Index() {
             <div
               className="mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-[15px] transition-all duration-500"
               style={{
-                background: "rgba(197,160,89,0.18)",
-                border: "1px solid rgba(197,160,89,0.45)",
+                background: "rgba(184,148,74,0.18)",
+                border: "1px solid rgba(184,148,74,0.45)",
               }}
             >
               <span className="text-gold-gradient">شروع تحلیل رایگان</span>
